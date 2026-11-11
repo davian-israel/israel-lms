@@ -119,7 +119,6 @@ async fn home(State(st): State<AppState>, s: Session) -> WebResult<Response> {
 
 // ------------------------------------------------------------------ plan
 pub struct DayCol {
-    pub name: String,
     pub date: String,
     pub today: bool,
     pub study: bool,
@@ -164,7 +163,6 @@ async fn plan_page(st: &AppState, p: &infra::auth::Principal, saved: bool, error
         .map(|i| {
             let d = start + Duration::days(i);
             DayCol {
-                name: kernel::weekday_short(d).into(),
                 date: kernel::short_date(d),
                 today: d == day,
                 study: prefs.is_study_day(d),

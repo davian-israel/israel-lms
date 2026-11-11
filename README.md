@@ -38,7 +38,7 @@ The home page lists the demo accounts when `DEMO_MODE=true`:
 | --- | --- |
 | `lms web` | Migrates, loads the curriculum (and demo data), serves HTTP on `PORT` |
 | `lms worker` | Consumes the outbox, rebuilds plans nightly, writes Monday class reviews, escalates safeguarding alerts |
-| `lms all` | Both in one process |
+| `lms all` | Both in one process (also the default; `LMS_ROLE` can set the role instead of an argument) |
 | `lms migrate` | Runs migrations and exits |
 | `lms seed` | Migrates and loads curriculum and demo data, then exits |
 

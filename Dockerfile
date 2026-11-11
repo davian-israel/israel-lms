@@ -23,4 +23,5 @@ USER lms
 ENV PORT=8080 RUST_LOG=info,sqlx=warn
 EXPOSE 8080
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/lms"]
-CMD ["web"]
+# Role: pass web | worker | all as the command, or set LMS_ROLE.
+CMD []
