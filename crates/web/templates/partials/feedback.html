@@ -1,0 +1,19 @@
+<div class="feedback {% if correct %}right{% else %}wrong{% endif %}" data-focus role="status">
+  {% if correct %}
+  <p style="margin:0;display:flex;gap:10px;align-items:center"><svg class="tick" width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M5 16 L12 23 L25 7" fill="none" stroke="#1F6B3F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Right.</strong> {{ answer }}</p>
+  {% else %}
+  <p style="margin:0"><strong>Not this time.</strong> You put {{ given }}. The answer is {{ answer }}.</p>
+  {% if !misconception.is_empty() %}<p style="margin:0">{{ misconception }}</p>{% endif %}
+  {% endif %}
+  {% if !explanation.is_empty() %}<p style="margin:0">{{ explanation }}</p>{% endif %}
+</div>
+<div class="inline" style="margin-top:14px">
+  <button class="btn" type="button" hx-get="/attempt/{{ attempt }}/q/{{ next }}" hx-target="#q">{% if last %}Finish{% else %}Next question{% endif %}</button>
+  <details><summary class="small">Something wrong with this question?</summary>
+    <form hx-post="/report/{{ item_id }}" hx-target="this" hx-swap="outerHTML" method="post" action="/report/{{ item_id }}" class="inline">
+      <label class="visually-hidden" for="note-{{ item_id }}">What's wrong?</label>
+      <input id="note-{{ item_id }}" name="note" placeholder="What's wrong?" style="font-size:16px">
+      <button class="btn secondary small" type="submit">Report it</button>
+    </form>
+  </details>
+</div>

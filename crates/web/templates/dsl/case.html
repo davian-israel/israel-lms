@@ -1,0 +1,38 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack" style="max-width:820px">
+  <p class="small"><a href="/safeguarding">All alerts</a></p>
+  <h1>Alert for {{ r.pupil }}</h1>
+  <p class="muted">{{ r.severity }} level, {{ r.category }}. Raised {{ r.opened }}. Status: {{ r.status }}.{% if paused %} Their study plan is paused.{% endif %}</p>
+  <section class="{% if r.high %}alert{% else %}note{% endif %}" aria-labelledby="said">
+    <h2 id="said" style="font-size:19px">What they wrote</h2>
+    <p style="font-size:19px;margin:0">"{{ excerpt }}"</p>
+  </section>
+  <p class="small muted">The pupil was shown a calm message saying a teacher would check in, with Childline's number (0800 1111). Follow your school's safeguarding policy. Viewing this page is recorded.</p>
+  {% if !error.is_empty() %}<p class="alert" role="alert">{{ error }}</p>{% endif %}
+  {% if r.open %}
+  <form method="post" action="/safeguarding/{{ r.id }}/acknowledge"><button class="btn" type="submit">I'm dealing with this</button></form>
+  {% endif %}
+  {% if !acknowledged.is_empty() %}<p>Acknowledged {{ acknowledged }}.</p>{% endif %}
+  {% if is_closed %}
+  <section class="panel">
+    <h2 style="font-size:19px">Closed {{ closed }}</h2>
+    <p><strong>Action taken:</strong> {{ action }}</p>
+    {% if !notes.is_empty() %}<p><strong>Notes:</strong> {{ notes }}</p>{% endif %}
+  </section>
+  {% else %}
+  <form class="form panel" method="post" action="/safeguarding/{{ r.id }}/close" style="max-width:none">
+    <h2 style="font-size:19px;margin:0">Record and close</h2>
+    <label class="field" for="action">Action taken
+      <input id="action" name="action" value="{{ action }}" required>
+      <span class="hint">For example: spoke with pupil and parent, referred to early help.</span>
+    </label>
+    <label class="field" for="notes">Notes (optional)
+      <textarea id="notes" name="notes" rows="3">{{ notes }}</textarea>
+    </label>
+    <label class="chip" style="align-self:flex-start"><input type="checkbox" name="resume" value="1" checked> Restart the pupil's study plan</label>
+    <div><button class="btn" type="submit">Close the alert</button></div>
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

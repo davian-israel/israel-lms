@@ -1,0 +1,39 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <h1>Pupils and logins</h1>
+    <p>Paste a class list from your MIS or a spreadsheet: first name, last name, year, class. One pupil per line. We check it before anything is created.</p>
+  </div>
+  {% if !error.is_empty() %}<p class="alert" role="alert">{{ error }}</p>{% endif %}
+  <form class="form" method="post" action="/school/pupils/check" style="max-width:720px">
+    <label class="field" for="csv">Class list
+      <textarea id="csv" name="csv" rows="8" class="mono" placeholder="First name,Last name,Year,Class&#10;Ama,Boateng,6,6B&#10;Kwame,Osei,6,6B" required>{{ csv }}</textarea>
+      <span class="hint">A header row is fine. Usernames are made from first name and last initial.</span>
+    </label>
+    <div><button class="btn" type="submit">Check the list</button></div>
+  </form>
+  {% if checked %}
+  <section aria-labelledby="chk">
+    <h2 id="chk">Check before creating</h2>
+    <p>{{ good }} of {{ rows.len() }} rows are ready.{% if good < rows.len() %} Rows with a problem are skipped: fix them in your list and check again.{% endif %}</p>
+    <table>
+      <thead><tr><th scope="col">Line</th><th scope="col">Name</th><th scope="col">Year</th><th scope="col">Class</th><th scope="col">Username</th><th scope="col">Problem</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+      <tr{% if r.problem.is_some() %} style="background:var(--error-bg)"{% endif %}><td>{{ r.line }}</td><td>{{ r.first_name }} {{ r.last_name }}</td><td>{% if let Some(y) = r.year_group %}{{ y }}{% endif %}</td><td>{{ r.class_name }}</td>
+        <td class="mono">{{ r.username }}{% if r.username_changed %} <span class="small">(number added: name already used)</span>{% endif %}</td>
+        <td>{% if let Some(pr) = r.problem %}{{ pr }}{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% if good > 0 %}
+    <form method="post" action="/school/pupils/create" style="margin-top:16px">
+      <input type="hidden" name="csv" value="{{ csv }}">
+      <button class="btn" type="submit">Create {{ good }} accounts and print login cards</button>
+    </form>
+    {% endif %}
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <h1>Classes</h1>
+  {% if classes.is_empty() %}<p class="note">You don't have any classes yet. Your school admin adds you to classes.</p>{% endif %}
+  <table>
+    <thead><tr><th scope="col">Class</th><th scope="col">Year</th><th scope="col">Pupils</th></tr></thead>
+    <tbody>{% for cl in classes %}<tr><td><a href="/teach/class/{{ cl.id }}">{{ cl.name }}</a></td><td>Year {{ cl.year_group }}</td><td>{{ cl.pupils }}</td></tr>{% endfor %}</tbody>
+  </table>
+</div>
+{% endblock %}

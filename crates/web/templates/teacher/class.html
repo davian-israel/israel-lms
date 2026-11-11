@@ -1,0 +1,42 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <h1>Class {{ class.name }}</h1>
+    <p class="muted">Year {{ class.year_group }}, {{ class.pupils }} pupils. Last week {{ studied }} of {{ pupils }} studied.</p>
+  </div>
+  <section class="panel" aria-labelledby="att">
+    <h2 id="att">Needs your attention</h2>
+    {% if attention.is_empty() %}<p>Nobody needs a follow-up right now. Plans are adjusting on their own.</p>{% else %}
+    <ul class="attention">
+      {% for (id, name, why) in attention %}<li><strong>{{ name }}</strong><span class="grow">{{ why }}</span><a href="/teach/pupil/{{ id }}">Open {{ name }}</a></li>{% endfor %}
+    </ul>{% endif %}
+  </section>
+  <section class="panel" aria-labelledby="rev">
+    <h2 id="rev">Weekly review, week of {{ week }}</h2>
+    <p>{{ review }}</p>
+  </section>
+  <section aria-labelledby="map">
+    <h2 id="map">Who knows what</h2>
+    {% if courses.len() > 1 %}
+    <nav class="tabs" aria-label="Course">{% for (id, title, colour) in courses %}<a href="/teach/class/{{ class.id }}?course={{ id }}"{% if *id == course %} aria-current="page"{% endif %}>{{ title }}</a>{% endfor %}</nav>
+    {% endif %}
+    {% if concepts.is_empty() %}<p class="note">No course for Year {{ class.year_group }} yet.</p>{% else %}
+    <div class="scroll" role="region" aria-label="Mastery by pupil and topic" tabindex="0">
+    <table class="heat">
+      <thead><tr><th scope="col"><span class="visually-hidden">Pupil</span></th>{% for (cid, ctitle) in concepts %}<th scope="col" class="c">{{ ctitle }}</th>{% endfor %}</tr></thead>
+      <tbody>
+      {% for r in rows %}
+        <tr><th scope="row"><a href="/teach/pupil/{{ r.id }}">{{ r.name }}</a></th>
+        {% for cell in r.cells %}<td><span class="cell l{{ cell.level }}" title="{{ cell.label }}, {{ cell.pct }}%">{% if cell.level > 0 %}{{ cell.pct }}%{% else %}<span class="visually-hidden">{{ cell.label }}</span>{% endif %}</span></td>{% endfor %}</tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    <ul class="key" aria-label="Key" style="margin-top:10px">
+      <li><span class="l0"></span>Not started</li><li><span class="l1"></span>Learning</li><li><span class="l2"></span>Reviewing</li><li><span class="l3"></span>Nearly secure</li><li><span class="l4"></span>Secured</li>
+    </ul>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

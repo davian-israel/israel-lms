@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  <p class="small"><a href="/tests">Practice tests</a></p>
+  <h1>{{ title }}: {{ score }} out of {{ max }}</h1>
+  {% if !scaled.is_empty() %}<p class="note">{{ scaled }}</p>{% endif %}
+  <p>Questions you got wrong have been added to your plan as fixes.</p>
+  <ol class="stack" style="gap:12px;padding-left:0;list-style:none">
+    {% for r in rows %}
+    <li class="feedback {% if r.correct %}right{% else %}wrong{% endif %}" style="animation:none">
+      <strong>{{ r.n }}. {{ r.prompt }}</strong>
+      <span>{% if r.given.is_empty() %}No answer.{% else %}You put {{ r.given }}.{% endif %} {% if r.correct %}Right.{% else %}The answer is {{ r.answer }}.{% endif %}</span>
+      {% if !r.correct && !r.explanation.is_empty() %}<span class="small">{{ r.explanation }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  <p><a class="btn" href="/home">Back to today</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <h1>{{ school_name }}</h1>
+    <p class="muted">School code <strong class="mono">{{ code }}</strong>. {{ pupils }} pupils, {{ staff_n }} staff, {{ parents }} parents connected.</p>
+  </div>
+  {% if !message.is_empty() %}<p class="note" role="status">{{ message }}</p>{% endif %}
+  {% if cases > 0 %}<p class="alert">{{ cases }} safeguarding case{% if cases != 1 %}s are{% else %} is{% endif %} still open. Only the safeguarding leads can see the details.</p>{% endif %}
+  <section class="panel" aria-labelledby="signin">
+    <h2 id="signin">Pupil sign-in</h2>
+    {% if active %}
+    <p class="okbox">Pupils can sign in with code {{ code }}.</p>
+    <form method="post" action="/school/activate"><input type="hidden" name="active" value="false"><button class="btn secondary small" type="submit">Switch off pupil sign-in</button></form>
+    {% else %}
+    <p>Pupils can't sign in yet.{% if !activation_problem.is_empty() %} {{ activation_problem }}{% endif %}</p>
+    <form method="post" action="/school/activate"><input type="hidden" name="active" value="true"><button class="btn small" type="submit"{% if !activation_problem.is_empty() %} aria-disabled="true"{% endif %}>Let pupils sign in</button></form>
+    {% endif %}
+  </section>
+  <section class="panel" aria-labelledby="staff">
+    <h2 id="staff">Staff and safeguarding duties</h2>
+    <p class="small muted">Each school needs one Designated Safeguarding Lead and one deputy. They receive alerts when a pupil's message suggests they may be at risk.</p>
+    <table>
+      <thead><tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Role</th><th scope="col">Duty</th><th scope="col"><span class="visually-hidden">Change</span></th></tr></thead>
+      <tbody>
+      {% for sr in staff %}
+      <tr><td>{{ sr.name }}</td><td>{{ sr.email }}</td><td>{{ sr.role }}</td>
+        <td>{% if sr.lead %}Safeguarding lead{% else if sr.deputy %}Deputy lead{% endif %}</td>
+        <td class="inline">
+          {% if !sr.lead %}<form method="post" action="/school/duty"><input type="hidden" name="staff" value="{{ sr.id }}"><input type="hidden" name="duty" value="dsl"><button class="link" type="submit">Make lead<span class="visually-hidden">: {{ sr.name }}</span></button></form>{% endif %}
+          {% if !sr.deputy %}<form method="post" action="/school/duty"><input type="hidden" name="staff" value="{{ sr.id }}"><input type="hidden" name="duty" value="deputy_dsl"><button class="link" type="submit">Make deputy<span class="visually-hidden">: {{ sr.name }}</span></button></form>{% endif %}
+        </td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <h1>Parents and carers</h1>
+    <p>{{ linked }} of {{ invites.len() }} pupils have a parent or carer connected. Each pupil has an invite code for the letter home. A code works once.</p>
+  </div>
+  <table>
+    <thead><tr><th scope="col">Pupil</th><th scope="col">Class</th><th scope="col">Invite code</th><th scope="col">Connected</th></tr></thead>
+    <tbody>{% for i in invites %}<tr><td>{{ i.pupil }}</td><td>{{ i.class_name }}</td><td class="mono">{% if i.linked %}Used{% else %}{{ i.invite_code }}{% endif %}</td><td>{% if i.linked %}Yes{% else %}Not yet{% endif %}</td></tr>{% endfor %}</tbody>
+  </table>
+  <section class="panel" aria-labelledby="letter">
+    <h2 id="letter">What the letter says</h2>
+    <p>Dear parent or carer, {{ school_name }} uses Margin for home learning. To see what your child is learning each week and how you can help: go to Margin, choose "I'm a parent or carer", sign in with your email address, then enter the invite code above.</p>
+  </section>
+</div>
+{% endblock %}

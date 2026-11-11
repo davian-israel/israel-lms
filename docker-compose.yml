@@ -1,0 +1,36 @@
+# Local development: Postgres, the web server and the worker.
+#   docker compose up --build
+# Then open http://localhost:8080 (demo accounts are listed on the home page).
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: lms
+      POSTGRES_PASSWORD: lms
+      POSTGRES_DB: lms
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lms"]
+      interval: 3s
+      retries: 20
+  web:
+    build: .
+    command: ["web"]
+    environment: &env
+      DATABASE_URL: postgres://lms:lms@db:5432/lms
+      DEMO_MODE: "true"
+      SYSADMIN_EMAIL: admin@margin.example
+      SYSADMIN_PASSWORD: change-me-local-only
+      SECURE_COOKIES: "false"
+      # LLM_API_KEY: set to switch on the AI helper
+    ports: ["8080:8080"]
+    depends_on:
+      db: { condition: service_healthy }
+  worker:
+    build: .
+    command: ["worker"]
+    environment: *env
+    depends_on:
+      db: { condition: service_healthy }
+volumes:
+  pgdata:

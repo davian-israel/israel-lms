@@ -1,0 +1,22 @@
+<form class="stack" style="gap:16px" hx-post="/attempt/{{ attempt }}/answer" hx-target="#q" method="post" action="/attempt/{{ attempt }}/answer" data-focus>
+  <input type="hidden" name="item" value="{{ item_id }}">
+  <input type="hidden" name="n" value="{{ n }}">
+  <p class="small muted" style="margin:0">Question {{ n + 1 }} of {{ total }}</p>
+  <fieldset style="border:0;padding:0;margin:0">
+    <legend style="font-size:21px;font-weight:700;margin-bottom:12px">{{ prompt }}</legend>
+    {% if choice %}
+    <div class="options">
+      {% for o in options %}<label class="opt" for="{{ o.id }}"><input type="radio" id="{{ o.id }}" name="answer" value="{{ o.label }}"> {{ o.label }}</label>{% endfor %}
+    </div>
+    {% else %}
+    <label class="field" for="answer-{{ n }}">Your answer
+      <input id="answer-{{ n }}" name="answer" autocomplete="off"{% if numeric %} inputmode="decimal"{% endif %} style="max-width:320px">
+    </label>
+    {% endif %}
+  </fieldset>
+  <div class="inline">
+    <button class="btn" type="submit">Check my answer</button>
+    {% if has_hints %}<button class="link" type="button" hx-get="/attempt/{{ attempt }}/hint/{{ item_id }}/0" hx-target="#hint-{{ item_id }}">Show a hint</button>{% endif %}
+  </div>
+  <div id="hint-{{ item_id }}" aria-live="polite"></div>
+</form>

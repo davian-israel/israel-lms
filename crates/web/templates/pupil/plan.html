@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <h1>My plan</h1>
+    <p>Margin builds this from what you need to review, mistakes to fix and what's next in your books. It changes when you do.</p>
+  </div>
+  <div class="scroll" role="region" aria-label="This week" tabindex="0">
+    <div class="week">
+      {% for d in days %}
+      <div class="day{% if d.today %} today{% endif %}{% if !d.study %} rest{% endif %}">
+        <strong>{{ d.date }}</strong>
+        {% if d.today %}<span class="small">Today</span>{% endif %}
+        {% for t in d.tasks %}
+        <a href="{{ t.href }}" class="t-{{ t.kind }}{% if t.done %} t-done{% endif %}" style="text-decoration:none">{{ t.verb }}: {{ t.title }}</a>
+        {% endfor %}
+        {% if d.tasks.is_empty() %}<span class="small muted">{% if d.study %}Nothing planned{% else %}Rest day{% endif %}</span>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <ul class="key" aria-label="Key">
+    <li><span style="background:var(--ink)"></span>Review</li>
+    <li><span style="background:var(--hi)"></span>Fix a mistake</li>
+    <li><span style="border:2px solid var(--blue)"></span>Learn or test</li>
+  </ul>
+  <section class="panel" aria-labelledby="when">
+    <h2 id="when">When I study</h2>
+    {% if saved %}<p class="okbox" role="status">Saved. Your plan has been rebuilt.</p>{% endif %}
+    {% if !error.is_empty() %}<p class="alert" role="alert">{{ error|capitalize }}.</p>{% endif %}
+    <form class="form" method="post" action="/plan/preferences" style="max-width:none">
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend style="font-weight:700;margin-bottom:6px">Study days</legend>
+        <div class="chips">
+          {% for (n, name, on) in prefs_days %}<label class="chip"><input type="checkbox" name="day" value="{{ n }}"{% if on %} checked{% endif %}> {{ name }}</label>{% endfor %}
+        </div>
+      </fieldset>
+      <label class="field" for="minutes">Minutes a day
+        <select id="minutes" name="minutes" style="max-width:200px">
+          {% for m in self.minute_options() %}<option value="{{ m }}"{% if m == minutes %} selected{% endif %}>{{ m }} minutes</option>{% endfor %}
+        </select>
+        <span class="hint">Short and often works better than long and rare.</span>
+      </label>
+      <div><button class="btn" type="submit">Save and rebuild my plan</button></div>
+    </form>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  {% if !message.is_empty() %}<p class="okbox" role="status">{{ message }}</p>{% endif %}
+  {% if children.is_empty() %}
+  <div>
+    <h1>Connect to your child</h1>
+    <p>Enter the invite code from the school's letter. It's 8 letters and numbers.</p>
+  </div>
+  {% else %}
+  <div>
+    {% if children.len() > 1 %}<nav class="tabs" aria-label="Child">{% for (id, name, on) in children %}<a href="/family?child={{ id }}"{% if *on %} aria-current="page"{% endif %}>{{ name }}</a>{% endfor %}</nav>{% endif %}
+    <h1>{{ child_name }}'s week was {{ week.headline() }}</h1>
+    <p class="muted">{{ week_label }}. <a href="/family?child={{ child_id }}&amp;weeks_ago={{ weeks_ago + 1 }}">Earlier week</a>{% if weeks_ago > 0 %} | <a href="/family?child={{ child_id }}&amp;weeks_ago={{ weeks_ago - 1 }}">Later week</a>{% endif %}</p>
+    {% if paused %}<p class="note">{{ child_name }}'s plan is paused by the school for now. The class teacher can tell you more.</p>{% endif %}
+  </div>
+  <div class="row">
+    <section class="panel grow" aria-labelledby="time">
+      <h2 id="time">Time spent</h2>
+      <p>{{ week.days_studied }} day{% if week.days_studied != 1 %}s{% endif %}, {{ week.total_minutes }} minutes in all.</p>
+      <div style="display:flex;gap:10px;align-items:flex-end;height:130px" role="img" aria-label="Minutes each day: {% for b in bars %}{{ b.day }} {{ b.minutes }}{% if !loop.last %}, {% endif %}{% endfor %}">
+        {% for b in bars %}<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><span class="small">{% if b.minutes > 0 %}{{ b.minutes }}{% endif %}</span><span style="display:block;width:100%;max-width:44px;height:{{ b.height }}%;background:{% if b.minutes > 0 %}var(--ink){% else %}var(--line){% endif %};border-radius:4px 4px 0 0"></span><span class="small">{{ b.day }}</span></div>{% endfor %}
+      </div>
+    </section>
+    <section class="panel side" aria-labelledby="res">
+      <h2 id="res">How it went</h2>
+      <ul style="padding-left:18px;margin:0">
+        <li>Questions: {{ week.quiz_right }} right out of {{ week.quiz_total }}</li>
+        <li>Reviews passed: {{ week.reviews_passed }} of {{ week.reviews_total }}</li>
+        {% if let Some((title, score, max)) = week.mock %}<li>Practice test, {{ title }}: {{ score }} out of {{ max }}</li>{% endif %}
+      </ul>
+    </section>
+  </div>
+  <div class="row">
+    <section class="panel grow" aria-labelledby="learn">
+      <h2 id="learn">Learned and secured</h2>
+      {% if week.learned.is_empty() && week.secured.is_empty() %}<p>No new topics this week.</p>{% endif %}
+      {% if !week.learned.is_empty() %}<p><strong>New:</strong> {{ week.learned.join(", ") }}.</p>{% endif %}
+      {% if !week.secured.is_empty() %}<p><strong>Secured</strong> (passed all five reviews): {{ week.secured.join(", ") }}.</p>{% endif %}
+      <p class="small muted">{{ reviews_coming }} review{% if reviews_coming != 1 %}s{% endif %} coming up in the next seven days.</p>
+    </section>
+    <section class="panel side" aria-labelledby="fix">
+      <h2 id="fix">Being worked on</h2>
+      {% if week.mistakes.is_empty() && fixes.is_empty() %}<p>No repeated mistakes right now.</p>{% endif %}
+      {% for (concept, mis, n) in week.mistakes %}<p><strong>{{ concept }}.</strong> {{ mis }}</p>{% endfor %}
+      {% if !fixes.is_empty() %}<p class="small">The plan added {{ fixes.len() }} fix session{% if fixes.len() != 1 %}s{% endif %}: {% for f in fixes %}{{ f.title }} ({{ f.when }}{% if f.done %}, done{% endif %}){% if !loop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
+    </section>
+  </div>
+  <section aria-labelledby="help">
+    <h2 id="help">Ways you can help this week</h2>
+    {% if help.is_empty() %}<p>Ask {{ child_name }} to explain one thing they learned this week, as if you were the pupil.</p>{% endif %}
+    <div class="row">
+      {% for (title, body, concept) in help %}<div class="panel side"><h3>{{ title }}</h3><p>{{ body }}</p><p class="small muted" style="margin:0">Helps with {{ concept }}</p></div>{% endfor %}
+    </div>
+    <p class="small muted">Five minutes of talking about it beats an hour of extra worksheets. Please don't do the questions for them: mistakes tell the plan what to practise.</p>
+  </section>
+  {% if !teacher.is_empty() %}<p>Questions? Contact {{ teacher }}{% if !teacher_email.is_empty() %} at <a href="mailto:{{ teacher_email }}">{{ teacher_email }}</a>{% endif %}.</p>{% endif %}
+  {% endif %}
+  <section class="panel" aria-labelledby="add">
+    <h2 id="add" style="font-size:19px">{% if children.is_empty() %}Invite code{% else %}Connect another child{% endif %}</h2>
+    {% if !error.is_empty() %}<p class="alert" role="alert">{{ error }}</p>{% endif %}
+    <form class="inline" method="post" action="/family/link">
+      <label class="visually-hidden" for="code">Invite code</label>
+      <input id="code" name="code" class="mono" autocomplete="off" style="text-transform:uppercase;letter-spacing:.1em;max-width:220px" required>
+      <button class="btn secondary small" type="submit">Connect</button>
+    </form>
+  </section>
+</div>
+{% endblock %}

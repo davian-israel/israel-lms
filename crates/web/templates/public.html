@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+{% include "head.html" %}
+<title>{% block title %}Sign in{% endblock %} | Margin</title>
+</head>
+<body>
+<div class="login">
+  <div class="cover">
+    <a class="brand" href="/" style="color:#fff">{% include "logo.html" %}<span>Margin</span></a>
+    <div class="label" aria-hidden="true">
+      <div class="small muted">Name</div><div class="ln">Your exercise books</div>
+      <div class="small muted">Subject</div><div class="ln" style="font-weight:400">are waiting inside.</div>
+    </div>
+    <p style="color:#E3ECFB;max-width:34ch">Learning that remembers what you know, and helps with what you don't.</p>
+  </div>
+  <main id="main" class="form-side">
+  {% block content %}{% endblock %}
+  </main>
+</div>
+</body>
+</html>

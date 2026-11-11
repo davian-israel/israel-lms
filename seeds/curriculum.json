@@ -1,0 +1,3873 @@
+{
+ "courses": [
+  {
+   "code": "ks2-maths-y6",
+   "title": "Maths",
+   "subject": "Maths",
+   "key_stage": "KS2",
+   "year_group": 6,
+   "colour": "#2D64C8",
+   "exam": "KS2 tests, 10 to 13 May 2027",
+   "concepts": [
+    {
+     "code": "ks2m.fraction-of-amount",
+     "title": "Fractions of amounts",
+     "unit": "Fractions",
+     "lesson": {
+      "read": [
+       "A fraction tells you how many equal parts to split something into, and how many of those parts you want.",
+       "In 3/5, the denominator (5) tells you to split the amount into 5 equal parts. The numerator (3) tells you to take 3 of them.",
+       "A bar model shows it clearly: draw a bar for 40, split it into 5 boxes of 8, then shade 3 boxes. The shaded part is 24."
+      ],
+      "steps": [
+       "Divide by the denominator: 40 ÷ 5 = 8. So one fifth is 8.",
+       "Multiply by the numerator: 8 × 3 = 24. So three fifths is 24."
+      ],
+      "check": "For a fraction less than 1, your answer must be smaller than the whole.",
+      "worked_example": [
+       [
+        "Find 5/8 of 72",
+        "72 ÷ 8 = 9, then 9 × 5 = 45. Check: 45 is smaller than 72."
+       ],
+       [
+        "Find 2/3 of 57",
+        "57 ÷ 3 = 19, then 19 × 2 = 38. Check: 38 is smaller than 57."
+       ]
+      ],
+      "reflect_prompt": "Explain to a friend how to find 2/5 of 30, and how you would check your answer.",
+      "reflect_ideas": [
+       [
+        "divide|÷|split",
+        "say that you divide by the bottom number first."
+       ],
+       [
+        "multiply|times|×",
+        "say that you then multiply by the top number."
+       ],
+       [
+        "check|smaller|less",
+        "add a check, such as making sure 12 is smaller than 30."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "What is 1/4 of 36?",
+       "options": [
+        {
+         "label": "32",
+         "misconception": "You took 4 away. A fraction means splitting into equal parts."
+        },
+        {
+         "label": "9",
+         "misconception": null
+        },
+        {
+         "label": "144",
+         "misconception": "You multiplied by 4. Divide by the denominator instead."
+        },
+        {
+         "label": "4",
+         "misconception": "That is the denominator, not the answer."
+        }
+       ],
+       "answer": "9",
+       "explanation": "36 ÷ 4 = 9.",
+       "hints": [
+        "What does the 4 tell you to do with 36?",
+        "Split 36 into 4 equal groups."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 3/5 of 40?",
+       "options": [
+        {
+         "label": "8",
+         "misconception": "You found one fifth. Now multiply by 3 to get three fifths."
+        }
+       ],
+       "answer": "24",
+       "explanation": "40 ÷ 5 = 8, then 8 × 3 = 24.",
+       "hints": [
+        "What does the 5 in 3/5 tell you to do with 40?",
+        "Each fifth is 8. You want 3 of them."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 2/3 of 45?",
+       "options": [
+        {
+         "label": "15",
+         "misconception": "You found one third. Multiply by 2 for two thirds."
+        }
+       ],
+       "answer": "30",
+       "explanation": "45 ÷ 3 = 15, then 15 × 2 = 30.",
+       "hints": [
+        "Find one third of 45 first.",
+        "One third is 15. How many thirds do you need?"
+       ]
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which is larger: 3/4 of 20 or 2/3 of 24?",
+       "options": [
+        {
+         "label": "3/4 of 20",
+         "misconception": "3/4 is a bigger fraction, but 24 is a bigger whole. Work out both: 15 and 16."
+        },
+        {
+         "label": "2/3 of 24",
+         "misconception": null
+        }
+       ],
+       "answer": "2/3 of 24",
+       "explanation": "3/4 of 20 = 15 and 2/3 of 24 = 16, so 2/3 of 24 is larger.",
+       "hints": [
+        "Work out each one separately.",
+        "20 ÷ 4 × 3, then 24 ÷ 3 × 2."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A bag has 60 sweets. Sam eats 5/12 of them. How many are left?",
+       "options": [
+        {
+         "label": "25",
+         "misconception": "That is how many Sam ate. The question asks how many are left."
+        }
+       ],
+       "answer": "35",
+       "explanation": "60 ÷ 12 = 5, so 5 × 5 = 25 eaten. 60 − 25 = 35 left.",
+       "hints": [
+        "What does the 12 in 5/12 tell you to do with the 60 sweets?",
+        "Each twelfth is 5 sweets. Sam eats 5 groups.",
+        "Sam ate 25. The question asks how many are left."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "3/8 of a number is 27. What is the number?",
+       "options": [
+        {
+         "label": "81",
+         "misconception": "You multiplied 27 by 3. First find one eighth: 27 ÷ 3 = 9."
+        },
+        {
+         "label": "9",
+         "misconception": "Nearly there: 9 is one eighth. The whole is 8 eighths."
+        }
+       ],
+       "answer": "72",
+       "explanation": "One eighth is 27 ÷ 3 = 9, so the whole is 9 × 8 = 72.",
+       "hints": [
+        "Is 27 the whole amount, or a part of it?",
+        "27 is 3 of the 8 parts. How big is one part?"
+       ]
+      }
+     ],
+     "review": [
+      {
+       "kind": "numeric",
+       "prompt": "What is 2/5 of 35?",
+       "options": [],
+       "answer": "14",
+       "explanation": "35 ÷ 5 = 7, 7 × 2 = 14.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 7/10 of 90?",
+       "options": [],
+       "answer": "63",
+       "explanation": "90 ÷ 10 = 9, 9 × 7 = 63.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A class has 32 pupils. 3/8 walk to school. How many do not walk?",
+       "options": [],
+       "answer": "20",
+       "explanation": "32 ÷ 8 = 4, 4 × 3 = 12 walk, 32 − 12 = 20 do not.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "What does the denominator tell you?",
+       "back": "How many equal parts the whole is split into"
+      },
+      {
+       "front": "What does the numerator tell you?",
+       "back": "How many of those parts you take"
+      },
+      {
+       "front": "3/4 of 20 = ?",
+       "back": "15"
+      }
+     ],
+     "help": {
+      "title": "Fractions while cooking",
+      "body": "Ask: “The recipe needs 3/4 of 200 g. How much is that?” (Answer: 150 g.) Let your child explain each step out loud."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks2m.find-the-whole",
+     "title": "Finding the whole from a fraction",
+     "unit": "Fractions",
+     "lesson": {
+      "read": [
+       "Sometimes you know a part and need the whole. If 2/7 of a number is 18, the 18 is 2 of the 7 equal parts.",
+       "Work backwards: find one part, then multiply up to all the parts."
+      ],
+      "steps": [
+       "Divide the part by the numerator: 18 ÷ 2 = 9. That is one seventh.",
+       "Multiply by the denominator: 9 × 7 = 63. That is the whole."
+      ],
+      "check": "Your whole must be bigger than the part you started with.",
+      "worked_example": [
+       [
+        "3/4 of a class is 21 pupils. How many in the class?",
+        "21 ÷ 3 = 7 per quarter, 7 × 4 = 28 pupils."
+       ]
+      ],
+      "reflect_prompt": "Explain how you would find a number when you know 3/5 of it is 30.",
+      "reflect_ideas": [
+       [
+        "divide|÷",
+        "say that you divide 30 by 3 first."
+       ],
+       [
+        "multiply|times|×|5",
+        "say that you then multiply by 5."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "numeric",
+       "prompt": "1/5 of a number is 7. What is the number?",
+       "options": [
+        {
+         "label": "1.4",
+         "misconception": "You found 1/5 of 7. Here 7 is the part, not the whole."
+        }
+       ],
+       "answer": "35",
+       "explanation": "One fifth is 7, so the whole is 7 × 5 = 35.",
+       "hints": [
+        "7 is one of how many equal parts?"
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "2/3 of a number is 20. What is the number?",
+       "options": [],
+       "answer": "30",
+       "explanation": "20 ÷ 2 = 10 for one third, 10 × 3 = 30.",
+       "hints": [
+        "How much is one third?"
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "3/4 of a class is 21 pupils. How many pupils are in the class?",
+       "options": [],
+       "answer": "28",
+       "explanation": "21 ÷ 3 = 7, 7 × 4 = 28.",
+       "hints": [
+        "21 is 3 quarters. How many is one quarter?"
+       ]
+      },
+      {
+       "kind": "choice",
+       "prompt": "5/6 of a number is 45. What is the number?",
+       "options": [
+        {
+         "label": "37.5",
+         "misconception": "That is 5/6 of 45. Here 45 is the part, so work backwards."
+        },
+        {
+         "label": "54",
+         "misconception": null
+        },
+        {
+         "label": "9",
+         "misconception": "9 is one sixth. Multiply by 6 for the whole."
+        }
+       ],
+       "answer": "54",
+       "explanation": "45 ÷ 5 = 9 for one sixth, 9 × 6 = 54.",
+       "hints": [
+        "Is 45 the part or the whole?"
+       ]
+      }
+     ],
+     "review": [
+      {
+       "kind": "numeric",
+       "prompt": "1/4 of a number is 12. What is the number?",
+       "options": [],
+       "answer": "48",
+       "explanation": "12 × 4 = 48.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "3/5 of a number is 30. What is the number?",
+       "options": [],
+       "answer": "50",
+       "explanation": "30 ÷ 3 = 10, 10 × 5 = 50.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "2/9 of a number is 8. What is the number?",
+       "options": [],
+       "answer": "36",
+       "explanation": "8 ÷ 2 = 4, 4 × 9 = 36.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "If 1/3 of a number is 5, the number is?",
+       "back": "15"
+      },
+      {
+       "front": "First step to find the whole from 3/4",
+       "back": "Divide the part by 3"
+      }
+     ],
+     "help": {
+      "title": "Pocket money puzzle",
+      "body": "Say: “I spent 1/4 of my money and it was £5. How much did I have?” (Answer: £20.) Ask how they worked it out."
+     },
+     "prerequisites": [
+      "ks2m.fraction-of-amount"
+     ]
+    },
+    {
+     "code": "ks2m.add-fractions",
+     "title": "Adding fractions with different denominators",
+     "unit": "Fractions",
+     "lesson": {
+      "read": [
+       "You can only add fractions when the parts are the same size, so the denominators must match.",
+       "Change one or both fractions into equivalent fractions with the same denominator, then add the numerators."
+      ],
+      "steps": [
+       "Find a common denominator: for 2/3 + 1/6, use sixths.",
+       "Convert: 2/3 = 4/6.",
+       "Add the numerators: 4/6 + 1/6 = 5/6."
+      ],
+      "check": "Never add the denominators: the size of the parts does not change.",
+      "worked_example": [
+       [
+        "1/3 + 1/4",
+        "Twelfths: 4/12 + 3/12 = 7/12."
+       ]
+      ],
+      "reflect_prompt": "Explain why 1/2 + 1/4 is not 2/6.",
+      "reflect_ideas": [
+       [
+        "same|common|denominator",
+        "explain that the parts must be the same size first."
+       ],
+       [
+        "quarter|4",
+        "show 1/2 as 2/4."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "1/2 + 1/4 = ?",
+       "options": [
+        {
+         "label": "2/6",
+         "misconception": "You added the tops and the bottoms. Make the denominators match first."
+        },
+        {
+         "label": "3/4",
+         "misconception": null
+        },
+        {
+         "label": "2/4",
+         "misconception": "1/2 is 2/4, so 2/4 + 1/4 = 3/4."
+        }
+       ],
+       "answer": "3/4",
+       "explanation": "1/2 = 2/4, so 2/4 + 1/4 = 3/4.",
+       "hints": [
+        "Can you write 1/2 in quarters?"
+       ]
+      },
+      {
+       "kind": "text",
+       "prompt": "2/3 + 1/6 = ? (write it as a fraction, like 1/2)",
+       "options": [],
+       "answer": "5/6|10/12",
+       "explanation": "2/3 = 4/6, so 4/6 + 1/6 = 5/6.",
+       "hints": [
+        "Write 2/3 in sixths."
+       ]
+      },
+      {
+       "kind": "text",
+       "prompt": "3/5 + 1/10 = ? (write it as a fraction)",
+       "options": [],
+       "answer": "7/10",
+       "explanation": "3/5 = 6/10, so 6/10 + 1/10 = 7/10.",
+       "hints": [
+        "Write 3/5 in tenths."
+       ]
+      },
+      {
+       "kind": "text",
+       "prompt": "1/3 + 1/4 = ? (write it as a fraction)",
+       "options": [],
+       "answer": "7/12",
+       "explanation": "4/12 + 3/12 = 7/12.",
+       "hints": [
+        "Both 3 and 4 go into 12."
+       ]
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "1/4 + 1/8 = ?",
+       "options": [],
+       "answer": "3/8",
+       "explanation": "2/8 + 1/8 = 3/8.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "1/2 + 1/3 = ?",
+       "options": [],
+       "answer": "5/6",
+       "explanation": "3/6 + 2/6 = 5/6.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which is the first step for 1/5 + 3/10?",
+       "options": [
+        {
+         "label": "Add 5 and 10",
+         "misconception": "Denominators are never added."
+        },
+        {
+         "label": "Write 1/5 as 2/10",
+         "misconception": null
+        }
+       ],
+       "answer": "Write 1/5 as 2/10",
+       "explanation": "1/5 = 2/10, then 2/10 + 3/10 = 5/10.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Can you add denominators?",
+       "back": "No: make them the same first"
+      },
+      {
+       "front": "1/2 in quarters",
+       "back": "2/4"
+      }
+     ],
+     "help": {
+      "title": "Pizza fractions",
+      "body": "Cut a pizza or a sheet of paper into 8. Ask: “If I eat 1/4 and you eat 1/8, how much is gone?” (Answer: 3/8.)"
+     },
+     "prerequisites": [
+      "ks2m.fraction-of-amount"
+     ]
+    },
+    {
+     "code": "ks2m.percent-of-amount",
+     "title": "Percentages of amounts",
+     "unit": "Percentages",
+     "lesson": {
+      "read": [
+       "Per cent means out of 100. 10% is one tenth, 25% is one quarter and 50% is one half.",
+       "To find other percentages, build them from 10% and 1%."
+      ],
+      "steps": [
+       "Find 10% by dividing by 10.",
+       "Build up: 15% = 10% + 5% (half of 10%)."
+      ],
+      "check": "50% must be half; 100% is the whole amount.",
+      "worked_example": [
+       [
+        "15% of 80",
+        "10% = 8, 5% = 4, so 15% = 12."
+       ]
+      ],
+      "reflect_prompt": "Explain two ways to find 25% of 360.",
+      "reflect_ideas": [
+       [
+        "quarter|4",
+        "say that 25% is one quarter."
+       ],
+       [
+        "10|tenth",
+        "show building it from 10%."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "What is 25% of 360?",
+       "options": [
+        {
+         "label": "36",
+         "misconception": "That is 10%. 25% is one quarter."
+        },
+        {
+         "label": "90",
+         "misconception": null
+        },
+        {
+         "label": "335",
+         "misconception": "You subtracted 25."
+        }
+       ],
+       "answer": "90",
+       "explanation": "25% is one quarter: 360 ÷ 4 = 90.",
+       "hints": [
+        "What fraction is 25%?"
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 10% of 70?",
+       "options": [],
+       "answer": "7",
+       "explanation": "70 ÷ 10 = 7.",
+       "hints": [
+        "10% is one tenth."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 15% of 80?",
+       "options": [],
+       "answer": "12",
+       "explanation": "10% = 8, 5% = 4, total 12.",
+       "hints": [
+        "Find 10% first, then half of it."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 60% of 45?",
+       "options": [],
+       "answer": "27",
+       "explanation": "10% = 4.5, so 60% = 4.5 × 6 = 27.",
+       "hints": [
+        "Find 10% of 45 first."
+       ]
+      }
+     ],
+     "review": [
+      {
+       "kind": "numeric",
+       "prompt": "What is 50% of 64?",
+       "options": [],
+       "answer": "32",
+       "explanation": "Half of 64.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 20% of 150?",
+       "options": [],
+       "answer": "30",
+       "explanation": "10% = 15, doubled.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "What is 75% of 120?",
+       "options": [],
+       "answer": "90",
+       "explanation": "25% = 30, three of them.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "10% of an amount",
+       "back": "Divide by 10"
+      },
+      {
+       "front": "25% as a fraction",
+       "back": "1/4"
+      }
+     ],
+     "help": {
+      "title": "Shopping sale",
+      "body": "In a shop or online, ask: “This £40 coat has 25% off. How much do we save?” (Answer: £10.)"
+     },
+     "prerequisites": [
+      "ks2m.fraction-of-amount"
+     ]
+    },
+    {
+     "code": "ks2m.arithmetic",
+     "title": "Written methods and arithmetic",
+     "unit": "Arithmetic",
+     "lesson": {
+      "read": [
+       "The arithmetic paper tests fast, accurate written methods: column addition and subtraction, short and long multiplication, and division.",
+       "Line digits up by place value, and estimate first so you can spot a wrong answer."
+      ],
+      "steps": [
+       "Estimate: 2,145 × 23 is about 2,000 × 20 = 40,000.",
+       "Calculate carefully, then compare with your estimate."
+      ],
+      "check": "If your answer is far from your estimate, check each column.",
+      "worked_example": [
+       [
+        "2,145 × 23",
+        "2,145 × 20 = 42,900 and 2,145 × 3 = 6,435. Total 49,335."
+       ]
+      ],
+      "reflect_prompt": "Explain how estimating helps you check a long multiplication.",
+      "reflect_ideas": [
+       [
+        "estimate|round|about",
+        "say that you round the numbers first."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "numeric",
+       "prompt": "36 × 7 = ?",
+       "options": [],
+       "answer": "252",
+       "explanation": "36 × 7 = 252.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "864 ÷ 4 = ?",
+       "options": [],
+       "answer": "216",
+       "explanation": "864 ÷ 4 = 216.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "7,002 − 2,468 = ?",
+       "options": [],
+       "answer": "4534",
+       "explanation": "Exchange across the zeros: 4,534.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "numeric",
+       "prompt": "4,326 + 1,509 = ?",
+       "options": [],
+       "answer": "5835",
+       "explanation": "5,835.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "1,000 − 456 = ?",
+       "options": [],
+       "answer": "544",
+       "explanation": "544.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "0.6 × 9 = ?",
+       "options": [],
+       "answer": "5.4",
+       "explanation": "5.4",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Estimate 2,145 × 23",
+       "back": "About 40,000"
+      }
+     ],
+     "help": {
+      "title": "Number talk at dinner",
+      "body": "Ask your child to estimate the total of a shopping receipt before you add it up exactly."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": [
+    {
+     "title": "Arithmetic practice test",
+     "minutes": 30,
+     "items": [
+      {
+       "kind": "numeric",
+       "prompt": "4,326 + 1,509 =",
+       "options": [],
+       "answer": "5835",
+       "explanation": "5,835",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "7,002 − 2,468 =",
+       "options": [],
+       "answer": "4534",
+       "explanation": "4,534",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "36 × 7 =",
+       "options": [],
+       "answer": "252",
+       "explanation": "252",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "864 ÷ 4 =",
+       "options": [],
+       "answer": "216",
+       "explanation": "216",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "25% of 360 =",
+       "options": [],
+       "answer": "90",
+       "explanation": "90",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "3/4 + 1/8 =",
+       "options": [],
+       "answer": "7/8",
+       "explanation": "6/8 + 1/8 = 7/8",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "2/3 of 42 =",
+       "options": [],
+       "answer": "28",
+       "explanation": "28",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "1,000 − 456 =",
+       "options": [],
+       "answer": "544",
+       "explanation": "544",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "0.6 × 9 =",
+       "options": [],
+       "answer": "5.4",
+       "explanation": "5.4",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "5,432 × 3 =",
+       "options": [],
+       "answer": "16296",
+       "explanation": "16,296",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "2,145 × 23 =",
+       "options": [],
+       "answer": "49335",
+       "explanation": "49,335",
+       "hints": [],
+       "marks": 2
+      },
+      {
+       "kind": "numeric",
+       "prompt": "1/2 of 1,250 =",
+       "options": [],
+       "answer": "625",
+       "explanation": "625",
+       "hints": []
+      }
+     ],
+     "concept": "ks2m.arithmetic"
+    }
+   ]
+  },
+  {
+   "code": "ks2-english-y6",
+   "title": "English",
+   "subject": "English",
+   "key_stage": "KS2",
+   "year_group": 6,
+   "colour": "#9C2F6B",
+   "exam": "KS2 grammar, punctuation and spelling test",
+   "concepts": [
+    {
+     "code": "ks2e.passive-voice",
+     "title": "Active and passive voice",
+     "unit": "Grammar",
+     "lesson": {
+      "read": [
+       "In an active sentence, the subject does the action: “The dog chased the cat.”",
+       "In a passive sentence, the subject has the action done to it: “The cat was chased by the dog.”",
+       "Writers choose the passive when the doer is unknown, unimportant or something they want to hide. News reports often say “Three shops were damaged” because the damage matters most."
+      ],
+      "steps": [
+       "Find the object (the thing the action is done to).",
+       "Move it to the front as the new subject.",
+       "Add a form of be plus the past participle: was cooked, were taken, has been repaired."
+      ],
+      "check": "“Tom was running” is not passive: Tom is still doing the action.",
+      "worked_example": [
+       [
+        "The chef cooked the meal.",
+        "The meal was cooked by the chef."
+       ],
+       [
+        "The council closed the library.",
+        "The library was closed by the council."
+       ]
+      ],
+      "reflect_prompt": "Write one active sentence about your school and turn it into the passive. Which would a head teacher use in a letter about a broken window, and why?",
+      "reflect_ideas": [
+       [
+        "was|were",
+        "use a form of be, such as was, in your passive sentence."
+       ],
+       [
+        "who|unknown|doer|focus",
+        "say why the doer might be left out."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Which sentence is in the passive voice?",
+       "options": [
+        {
+         "label": "Tom broke the window.",
+         "misconception": "Here Tom does the action, so it is active."
+        },
+        {
+         "label": "The window was broken.",
+         "misconception": null
+        },
+        {
+         "label": "The window broke.",
+         "misconception": "No one does anything to the window here; it is active, even without a doer."
+        },
+        {
+         "label": "Tom was breaking the window.",
+         "misconception": "“Was” does not make a sentence passive: Tom is still the doer."
+        }
+       ],
+       "answer": "The window was broken.",
+       "explanation": "In “The window was broken” the action is done to the window.",
+       "hints": [
+        "Who or what is the action done to?"
+       ]
+      },
+      {
+       "kind": "text",
+       "prompt": "Rewrite in the passive: “The chef cooked the meal.”",
+       "options": [],
+       "answer": "The meal was cooked by the chef.|The meal was cooked.",
+       "explanation": "The object moves to the front and the verb becomes was cooked.",
+       "hints": [
+        "What is the thing being cooked?",
+        "Start with “The meal”.",
+        "Add was plus the past participle of cook."
+       ]
+      },
+      {
+       "kind": "text",
+       "prompt": "Complete with the passive form of deliver: “The parcels ___ every morning.”",
+       "options": [],
+       "answer": "are delivered",
+       "explanation": "Plural present passive: are delivered.",
+       "hints": [
+        "Parcels is plural and it happens every morning."
+       ]
+      },
+      {
+       "kind": "choice",
+       "prompt": "In “The cake was eaten by the children”, who did the eating?",
+       "options": [
+        {
+         "label": "the cake",
+         "misconception": "The cake is the subject, but the children did the action."
+        },
+        {
+         "label": "the children",
+         "misconception": null
+        }
+       ],
+       "answer": "the children",
+       "explanation": "The doer comes after “by”.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "Active or passive: “The song was written in 1990.”",
+       "options": [
+        {
+         "label": "Active",
+         "misconception": "The song had the action done to it."
+        },
+        {
+         "label": "Passive",
+         "misconception": null
+        }
+       ],
+       "answer": "Passive",
+       "explanation": "Passive.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Rewrite in the passive: “Wasps stung the gardener.”",
+       "options": [],
+       "answer": "The gardener was stung by wasps.|The gardener was stung.",
+       "explanation": "The gardener was stung (by wasps).",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Active or passive: “The children were laughing.”",
+       "options": [
+        {
+         "label": "Passive",
+         "misconception": "“Were” does not make it passive: the children are doing the laughing."
+        },
+        {
+         "label": "Active",
+         "misconception": null
+        }
+       ],
+       "answer": "Active",
+       "explanation": "Active.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Passive voice is formed with",
+       "back": "a form of be + past participle"
+      },
+      {
+       "front": "Is “She was singing” passive?",
+       "back": "No"
+      }
+     ],
+     "help": {
+      "title": "Headline hunt",
+      "body": "Find a news headline together and ask: “Do we know who did it?” “Window smashed at school” hides the doer. That is the passive voice."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks2e.relative-clauses",
+     "title": "Relative clauses",
+     "unit": "Grammar",
+     "lesson": {
+      "read": [
+       "A relative clause adds information about a noun. It usually starts with a relative pronoun: who, which, that, whose, where or when.",
+       "“The boy who won the race smiled.” The clause “who won the race” tells us which boy."
+      ],
+      "steps": [
+       "Use who for people, which for things, whose for belonging.",
+       "Use where for places and when for times."
+      ],
+      "check": "Take the clause out: the main sentence should still make sense.",
+      "worked_example": [
+       [
+        "The book ___ I borrowed was great.",
+        "which (or that)"
+       ]
+      ],
+      "reflect_prompt": "Write a sentence about your town with a relative clause starting with where.",
+      "reflect_ideas": [
+       [
+        "where",
+        "start your clause with where."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "text",
+       "prompt": "Which word is the relative pronoun? “The boy who won the race smiled.”",
+       "options": [],
+       "answer": "who",
+       "explanation": "“Who” starts the relative clause.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Choose the word: “The dog ___ bone was buried barked.”",
+       "options": [
+        {
+         "label": "who's",
+         "misconception": "Who's means who is."
+        },
+        {
+         "label": "whose",
+         "misconception": null
+        },
+        {
+         "label": "which",
+         "misconception": "Use whose to show belonging."
+        }
+       ],
+       "answer": "whose",
+       "explanation": "Whose shows belonging.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Fill the gap: “The house ___ I grew up is now a shop.”",
+       "options": [],
+       "answer": "where",
+       "explanation": "Where is used for places.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which sentence contains a relative clause?",
+       "options": [
+        {
+         "label": "My aunt lives in Leeds.",
+         "misconception": "There is no clause adding information about a noun."
+        },
+        {
+         "label": "My aunt, who lives in Leeds, is visiting.",
+         "misconception": null
+        },
+        {
+         "label": "My aunt is visiting on Friday.",
+         "misconception": "On Friday is a phrase about time, not a relative clause."
+        }
+       ],
+       "answer": "My aunt, who lives in Leeds, is visiting.",
+       "explanation": "“who lives in Leeds” adds information about my aunt.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Relative pronoun for a place?",
+       "options": [],
+       "answer": "where",
+       "explanation": "where",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Relative pronoun for belonging?",
+       "options": [],
+       "answer": "whose",
+       "explanation": "whose",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Find the relative pronoun: “The cake that Mum made was delicious.”",
+       "options": [],
+       "answer": "that",
+       "explanation": "that",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Relative pronouns",
+       "back": "who, which, that, whose, where, when"
+      }
+     ],
+     "help": {
+      "title": "Who, which, where game",
+      "body": "On a walk, take turns describing things with who, which or where: “That is the shop where we buy bread.”"
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks2e.apostrophes",
+     "title": "Apostrophes for possession",
+     "unit": "Punctuation",
+     "lesson": {
+      "read": [
+       "An apostrophe can show that something belongs to someone.",
+       "One owner: add ’s (the dog’s bowl). Plural owner ending in s: add ’ after the s (the dogs’ bowls). Plural not ending in s: add ’s (the children’s toys)."
+      ],
+      "steps": [
+       "Decide who the owner is and whether there is one or more.",
+       "Write the owner word, then add the apostrophe in the right place."
+      ],
+      "check": "Its (belonging) has no apostrophe; it’s means it is.",
+      "worked_example": [
+       [
+        "the coats of the girls",
+        "the girls’ coats"
+       ]
+      ],
+      "reflect_prompt": "Explain the difference between its and it’s.",
+      "reflect_ideas": [
+       [
+        "it is",
+        "say that it's means it is."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "text",
+       "prompt": "Write with an apostrophe: the bowl belonging to one dog",
+       "options": [],
+       "answer": "the dog's bowl|dog's bowl",
+       "explanation": "One owner: dog’s.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Write with an apostrophe: the coats of the girls",
+       "options": [],
+       "answer": "the girls' coats|girls' coats",
+       "explanation": "Plural ending in s: girls’.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Write with an apostrophe: the toys of the children",
+       "options": [],
+       "answer": "the children's toys|children's toys",
+       "explanation": "Children does not end in s: children’s.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Choose: “The cat licked ___ paw.”",
+       "options": [
+        {
+         "label": "it's",
+         "misconception": "It's means it is. Belonging uses its."
+        },
+        {
+         "label": "its",
+         "misconception": null
+        }
+       ],
+       "answer": "its",
+       "explanation": "Its shows belonging.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "the hat of the man",
+       "options": [],
+       "answer": "the man's hat|man's hat",
+       "explanation": "man’s",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "the bags of the teachers",
+       "options": [],
+       "answer": "the teachers' bags|teachers' bags",
+       "explanation": "teachers’",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“___ raining.”",
+       "options": [
+        {
+         "label": "Its",
+         "misconception": "It is raining needs it's."
+        },
+        {
+         "label": "It's",
+         "misconception": null
+        }
+       ],
+       "answer": "It's",
+       "explanation": "It’s = it is.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Plural owner ending in s",
+       "back": "Apostrophe after the s"
+      },
+      {
+       "front": "its or it's for belonging?",
+       "back": "its"
+      }
+     ],
+     "help": {
+      "title": "Label spotting",
+      "body": "Look at shop signs together and spot apostrophes. Are they right? (“Carrot’s £1” is a common mistake.)"
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks2e.modal-verbs",
+     "title": "Modal verbs",
+     "unit": "Grammar",
+     "lesson": {
+      "read": [
+       "Modal verbs show how likely something is or whether it must happen: can, could, may, might, will, would, shall, should, must.",
+       "“It might rain” is less certain than “It will rain”."
+      ],
+      "steps": [
+       "Decide how certain or necessary the action is.",
+       "Choose the modal verb that matches."
+      ],
+      "check": "Must and will show the most certainty or need; might and may show possibility.",
+      "worked_example": [
+       [
+        "You ___ wear a helmet. It’s the law.",
+        "must"
+       ]
+      ],
+      "reflect_prompt": "Write two sentences about tomorrow’s weather, one certain and one uncertain.",
+      "reflect_ideas": [
+       [
+        "will|must",
+        "use will for the certain one."
+       ],
+       [
+        "might|may|could",
+        "use might for the uncertain one."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Which modal verb shows the most certainty?",
+       "options": [
+        {
+         "label": "might",
+         "misconception": "Might shows possibility, not certainty."
+        },
+        {
+         "label": "will",
+         "misconception": null
+        },
+        {
+         "label": "could",
+         "misconception": "Could shows possibility."
+        }
+       ],
+       "answer": "will",
+       "explanation": "Will is the most certain.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Fill the gap: “You ___ wear a helmet; it’s the law.”",
+       "options": [],
+       "answer": "must",
+       "explanation": "It is a rule, so must.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which sentence shows possibility?",
+       "options": [
+        {
+         "label": "We will go to the park.",
+         "misconception": "Will is certain."
+        },
+        {
+         "label": "We might go to the park.",
+         "misconception": null
+        },
+        {
+         "label": "We must go to the park.",
+         "misconception": "Must shows need."
+        }
+       ],
+       "answer": "We might go to the park.",
+       "explanation": "Might shows possibility.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Modal verb for possibility, starting with m",
+       "options": [],
+       "answer": "might|may",
+       "explanation": "might / may",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Most certain:",
+       "options": [
+        {
+         "label": "may",
+         "misconception": "May is possible, not certain."
+        },
+        {
+         "label": "will",
+         "misconception": null
+        }
+       ],
+       "answer": "will",
+       "explanation": "will",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Fill: “You ___ finish your homework before you play.” (it is required)",
+       "options": [],
+       "answer": "must|should",
+       "explanation": "must",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Modal verbs of possibility",
+       "back": "may, might, could"
+      }
+     ],
+     "help": {
+      "title": "Weather forecast",
+      "body": "Ask your child to read tomorrow’s forecast and say it with modal verbs: “It might rain, but it will be windy.”"
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  },
+  {
+   "code": "ks2-thinking-y6",
+   "title": "Thinking skills",
+   "subject": "Logic and reasoning",
+   "key_stage": "KS2",
+   "year_group": 6,
+   "colour": "#B04A16",
+   "exam": "11+ reasoning and KS2 maths reasoning",
+   "concepts": [
+    {
+     "code": "ks2t.all-some-none",
+     "title": "All, some and none",
+     "unit": "Logic",
+     "lesson": {
+      "read": [
+       "Words like all, some and no change what we can be sure of.",
+       "“All dogs are animals. Rex is a dog.” So Rex must be an animal.",
+       "“All cats have tails. Bella has a tail.” Is Bella a cat? Not necessarily: dogs and mice have tails too."
+      ],
+      "steps": [
+       "Draw a Venn diagram: put the smaller group inside the bigger one.",
+       "Ask: must it be true, or only might it be true?"
+      ],
+      "check": "“All A are B” does not mean “all B are A”.",
+      "worked_example": [
+       [
+        "No fish can fly. Some pets are fish.",
+        "So some pets cannot fly: must be true."
+       ]
+      ],
+      "reflect_prompt": "Write your own “All… This is… So…” argument that is correct, and one that is a trap.",
+      "reflect_ideas": [
+       [
+        "all",
+        "use the word all in your argument."
+       ],
+       [
+        "trap|not necessarily|might",
+        "explain why the trap does not have to be true."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "All roses are flowers. This is a rose. Must it be a flower?",
+       "options": [
+        {
+         "label": "No",
+         "misconception": "If all roses are flowers, any rose is a flower."
+        },
+        {
+         "label": "Yes",
+         "misconception": null
+        }
+       ],
+       "answer": "Yes",
+       "explanation": "Yes.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "All squares have four sides. This shape has four sides. Must it be a square?",
+       "options": [
+        {
+         "label": "Yes",
+         "misconception": "All squares have four sides, but other shapes do too, like rectangles."
+        },
+        {
+         "label": "No",
+         "misconception": null
+        }
+       ],
+       "answer": "No",
+       "explanation": "No: it could be a rectangle or a rhombus.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "No fish can fly. Some pets are fish. Must some pets be unable to fly?",
+       "options": [
+        {
+         "label": "No",
+         "misconception": "The pets that are fish cannot fly, so some pets cannot fly."
+        },
+        {
+         "label": "Yes",
+         "misconception": null
+        }
+       ],
+       "answer": "Yes",
+       "explanation": "Yes.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Some children in the class like football. Does that mean some do not?",
+       "options": [
+        {
+         "label": "Yes",
+         "misconception": "Some can still mean all of them. We cannot be sure."
+        },
+        {
+         "label": "Not necessarily",
+         "misconception": null
+        }
+       ],
+       "answer": "Not necessarily",
+       "explanation": "“Some” does not rule out all.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "All birds have feathers. A penguin is a bird. Must it have feathers?",
+       "options": [
+        {
+         "label": "No",
+         "misconception": "All birds have feathers."
+        },
+        {
+         "label": "Yes",
+         "misconception": null
+        }
+       ],
+       "answer": "Yes",
+       "explanation": "Yes.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "All triangles have three sides. This shape has three sides. Must it be a triangle?",
+       "options": [
+        {
+         "label": "No",
+         "misconception": "A shape with three straight sides is a triangle."
+        },
+        {
+         "label": "Yes",
+         "misconception": null
+        }
+       ],
+       "answer": "Yes",
+       "explanation": "Yes.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "All cats have whiskers. Max has whiskers. Must Max be a cat?",
+       "options": [
+        {
+         "label": "Yes",
+         "misconception": "Dogs and rabbits have whiskers too."
+        },
+        {
+         "label": "No",
+         "misconception": null
+        }
+       ],
+       "answer": "No",
+       "explanation": "No.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "All A are B. Does it mean all B are A?",
+       "back": "No"
+      },
+      {
+       "front": "Some can mean...",
+       "back": "some or all"
+      }
+     ],
+     "help": {
+      "title": "Must or might?",
+      "body": "At dinner, say a rule like “All our plates are white” and test it: “This is white. Must it be our plate?”"
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks2t.logic-grids",
+     "title": "Logic grid puzzles",
+     "unit": "Logic",
+     "lesson": {
+      "read": [
+       "A logic grid puzzle gives clues; each clue rules out possibilities.",
+       "Draw a grid with people down the side and options along the top. Put a cross for impossible, a tick for certain."
+      ],
+      "steps": [
+       "Use the definite clues first.",
+       "When a row has one gap left, it must be the answer."
+      ],
+      "check": "Every row and column has exactly one tick.",
+      "worked_example": [
+       [
+        "Ava, Ben and Cal have a cat, dog and fish. Ava does not have the dog. Ben has the fish.",
+        "Ben: fish. Ava: cat. Cal: dog."
+       ]
+      ],
+      "reflect_prompt": "Explain the first clue you used in a logic grid and why.",
+      "reflect_ideas": [
+       [
+        "first|definite|certain|start",
+        "say why you start with the definite clue."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Ava, Ben and Cal have a cat, a dog and a fish. Ava does not have the dog. Ben has the fish. Who has the dog?",
+       "options": [
+        {
+         "label": "Ava",
+         "misconception": "The clue says Ava does not have the dog."
+        },
+        {
+         "label": "Cal",
+         "misconception": null
+        },
+        {
+         "label": "Ben",
+         "misconception": "Ben has the fish."
+        }
+       ],
+       "answer": "Cal",
+       "explanation": "Ben has the fish, Ava is not the dog, so Cal.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Three friends sit in a row. Jo is in the middle. Kim is not on the left. Where is Kim?",
+       "options": [
+        {
+         "label": "In the middle",
+         "misconception": "Jo is in the middle."
+        },
+        {
+         "label": "On the right",
+         "misconception": null
+        },
+        {
+         "label": "On the left",
+         "misconception": "The clue says Kim is not on the left."
+        }
+       ],
+       "answer": "On the right",
+       "explanation": "Only the right is left for Kim.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "In a grid, a row has crosses in all boxes but one. What goes in the last box?",
+       "options": [
+        {
+         "label": "A cross",
+         "misconception": "Each row needs exactly one tick."
+        },
+        {
+         "label": "A tick",
+         "misconception": null
+        }
+       ],
+       "answer": "A tick",
+       "explanation": "The last box must be a tick.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "Mia likes red or blue. She does not like red. Which does she like?",
+       "options": [
+        {
+         "label": "Red",
+         "misconception": "The clue rules out red."
+        },
+        {
+         "label": "Blue",
+         "misconception": null
+        }
+       ],
+       "answer": "Blue",
+       "explanation": "Blue.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Two clues say Sam is not first and not third of three. Where is Sam?",
+       "options": [
+        {
+         "label": "First",
+         "misconception": "Ruled out."
+        },
+        {
+         "label": "Second",
+         "misconception": null
+        }
+       ],
+       "answer": "Second",
+       "explanation": "Second.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "How many ticks in each row of a logic grid?",
+       "options": [
+        {
+         "label": "Two",
+         "misconception": "Each person has exactly one option."
+        },
+        {
+         "label": "One",
+         "misconception": null
+        }
+       ],
+       "answer": "One",
+       "explanation": "One.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Logic grid: cross means",
+       "back": "impossible"
+      }
+     ],
+     "help": {
+      "title": "Who has what?",
+      "body": "Make a quick puzzle with family members and their favourite drinks, and let your child solve it with a grid."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks2t.fact-opinion",
+     "title": "Fact or opinion",
+     "unit": "Critical thinking",
+     "lesson": {
+      "read": [
+       "A fact can be checked and shown to be true or false. An opinion is what someone thinks or feels.",
+       "Words like best, worst, should and I think often signal opinions."
+      ],
+      "steps": [
+       "Ask: could I check this?",
+       "Look for feeling words."
+      ],
+      "check": "A fact can be wrong and still be a statement of fact.",
+      "worked_example": [
+       [
+        "Dogs have four legs.",
+        "Fact: it can be checked."
+       ],
+       [
+        "Dogs are the best pets.",
+        "Opinion: people disagree."
+       ]
+      ],
+      "reflect_prompt": "Find one fact and one opinion in an advert and explain which is which.",
+      "reflect_ideas": [
+       [
+        "check|true|prove",
+        "say how you could check the fact."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Fact or opinion: “The Thames flows through London.”",
+       "options": [
+        {
+         "label": "Opinion",
+         "misconception": "You can check this on a map."
+        },
+        {
+         "label": "Fact",
+         "misconception": null
+        }
+       ],
+       "answer": "Fact",
+       "explanation": "Fact.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Fact or opinion: “Maths is the most fun subject.”",
+       "options": [
+        {
+         "label": "Fact",
+         "misconception": "People disagree; it cannot be proved."
+        },
+        {
+         "label": "Opinion",
+         "misconception": null
+        }
+       ],
+       "answer": "Opinion",
+       "explanation": "Opinion.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which word often signals an opinion?",
+       "options": [
+        {
+         "label": "measured",
+         "misconception": "Measured suggests something checked."
+        },
+        {
+         "label": "best",
+         "misconception": null
+        }
+       ],
+       "answer": "best",
+       "explanation": "Best is a judgement.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "Fact or opinion: “There are 7 days in a week.”",
+       "options": [
+        {
+         "label": "Opinion",
+         "misconception": "It can be checked."
+        },
+        {
+         "label": "Fact",
+         "misconception": null
+        }
+       ],
+       "answer": "Fact",
+       "explanation": "Fact.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Fact or opinion: “Summer is better than winter.”",
+       "options": [
+        {
+         "label": "Fact",
+         "misconception": "This is what someone thinks."
+        },
+        {
+         "label": "Opinion",
+         "misconception": null
+        }
+       ],
+       "answer": "Opinion",
+       "explanation": "Opinion.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“This shop has the friendliest staff.” is...",
+       "options": [
+        {
+         "label": "Fact",
+         "misconception": "Friendliest is a judgement."
+        },
+        {
+         "label": "Opinion",
+         "misconception": null
+        }
+       ],
+       "answer": "Opinion",
+       "explanation": "Opinion.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "A fact can be...",
+       "back": "checked"
+      }
+     ],
+     "help": {
+      "title": "Advert detective",
+      "body": "Watch an advert together and sort its claims into facts and opinions."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  },
+  {
+   "code": "gcse-biology",
+   "title": "Biology",
+   "subject": "Biology",
+   "key_stage": "KS4",
+   "year_group": 10,
+   "colour": "#2B7A4B",
+   "exam": "GCSE Biology (AQA 8461)",
+   "concepts": [
+    {
+     "code": "gcseb.osmosis",
+     "title": "Osmosis",
+     "unit": "Cell biology",
+     "lesson": {
+      "read": [
+       "Osmosis is the diffusion of water from a dilute solution to a more concentrated solution through a partially permeable membrane.",
+       "In pure water, water moves into cells. Animal cells swell and may burst; plant cells become turgid because the cell wall stops them bursting.",
+       "In a concentrated solution, water moves out. Animal cells shrink; plant cells become flaccid and can plasmolyse."
+      ],
+      "steps": [
+       "Required practical: weigh potato cylinders, leave them in sugar solutions, blot dry, reweigh.",
+       "Calculate % change in mass = change ÷ start mass × 100.",
+       "Plot % change against concentration; where the line crosses zero matches the cell concentration."
+      ],
+      "check": "Only water moves in osmosis, not the solute.",
+      "worked_example": [
+       [
+        "Start 2.50 g, end 2.20 g",
+        "Change −0.30 g; −0.30 ÷ 2.50 × 100 = −12%."
+       ]
+      ],
+      "reflect_prompt": "Explain why salting a slug harms it, using the word osmosis.",
+      "reflect_ideas": [
+       [
+        "osmosis",
+        "use the word osmosis."
+       ],
+       [
+        "water|out|leave",
+        "say water leaves the cells."
+       ],
+       [
+        "concentrat",
+        "mention the concentrated salt solution."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Which is the correct definition of osmosis?",
+       "options": [
+        {
+         "label": "Movement of sugar from a concentrated to a dilute solution",
+         "misconception": "Osmosis is about water, not the solute."
+        },
+        {
+         "label": "Diffusion of water from a dilute to a more concentrated solution through a partially permeable membrane",
+         "misconception": null
+        },
+        {
+         "label": "Diffusion of water from a concentrated to a dilute solution",
+         "misconception": "The direction is reversed: water moves to the more concentrated side."
+        }
+       ],
+       "answer": "Diffusion of water from a dilute to a more concentrated solution through a partially permeable membrane",
+       "explanation": "Water only, dilute to concentrated.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "A red blood cell is placed in distilled water. What happens?",
+       "options": [
+        {
+         "label": "It shrinks",
+         "misconception": "Water moves in, not out, in pure water."
+        },
+        {
+         "label": "It swells and may burst",
+         "misconception": null
+        },
+        {
+         "label": "It becomes turgid",
+         "misconception": "Turgid describes plant cells with a cell wall."
+        }
+       ],
+       "answer": "It swells and may burst",
+       "explanation": "Water enters; no cell wall to stop it.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "A potato cylinder is left in 1.0 mol/dm³ sugar solution. Its mass will...",
+       "options": [
+        {
+         "label": "Increase",
+         "misconception": "The solution is more concentrated, so water leaves the potato."
+        },
+        {
+         "label": "Decrease",
+         "misconception": null
+        }
+       ],
+       "answer": "Decrease",
+       "explanation": "Water leaves by osmosis.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A cylinder goes from 2.50 g to 2.20 g. Calculate the % change in mass.",
+       "options": [
+        {
+         "label": "12",
+         "misconception": "The mass went down, so the change is negative."
+        },
+        {
+         "label": "-13.6",
+         "misconception": "Divide by the starting mass, 2.50."
+        }
+       ],
+       "answer": "-12",
+       "explanation": "−0.30 ÷ 2.50 × 100 = −12%.",
+       "hints": [
+        "Change = end minus start.",
+        "Divide the change by the starting mass, not the end mass."
+       ]
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "In osmosis, water moves to the more...",
+       "options": [
+        {
+         "label": "dilute solution",
+         "misconception": "Water moves from dilute to concentrated."
+        },
+        {
+         "label": "concentrated solution",
+         "misconception": null
+        }
+       ],
+       "answer": "concentrated solution",
+       "explanation": "concentrated",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Name the state of a plant cell full of water.",
+       "options": [],
+       "answer": "turgid",
+       "explanation": "Turgid.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A cylinder goes from 3.20 g to 3.60 g. % change?",
+       "options": [],
+       "answer": "12.5",
+       "explanation": "0.40 ÷ 3.20 × 100 = 12.5%.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Define osmosis",
+       "back": "Diffusion of water from dilute to concentrated across a partially permeable membrane"
+      },
+      {
+       "front": "Plant cell in pure water",
+       "back": "Turgid"
+      }
+     ],
+     "help": {
+      "title": "Kitchen osmosis",
+      "body": "Put a carrot stick in salty water and one in plain water overnight. Ask your child to explain the difference using osmosis."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "gcseb.diffusion",
+     "title": "Diffusion",
+     "unit": "Cell biology",
+     "lesson": {
+      "read": [
+       "Diffusion is the net movement of particles from an area of higher concentration to an area of lower concentration.",
+       "It is passive: it needs no energy from the cell. Oxygen and carbon dioxide move into and out of cells by diffusion."
+      ],
+      "steps": [
+       "Rate increases with a bigger concentration gradient.",
+       "Rate increases with higher temperature and a larger surface area."
+      ],
+      "check": "Diffusion continues until concentrations are equal.",
+      "worked_example": [
+       [
+        "Oxygen in the lungs",
+        "Moves from air sacs (high) into the blood (low)."
+       ]
+      ],
+      "reflect_prompt": "Explain why the lungs have many small air sacs.",
+      "reflect_ideas": [
+       [
+        "surface area",
+        "mention surface area."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Diffusion is the net movement of particles from...",
+       "options": [
+        {
+         "label": "low to high concentration",
+         "misconception": "That would need energy: it is active transport."
+        },
+        {
+         "label": "high to low concentration",
+         "misconception": null
+        }
+       ],
+       "answer": "high to low concentration",
+       "explanation": "High to low.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which increases the rate of diffusion?",
+       "options": [
+        {
+         "label": "A smaller surface area",
+         "misconception": "Smaller area slows diffusion."
+        },
+        {
+         "label": "A higher temperature",
+         "misconception": null
+        }
+       ],
+       "answer": "A higher temperature",
+       "explanation": "Particles move faster.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Does diffusion need energy from respiration?",
+       "options": [
+        {
+         "label": "Yes",
+         "misconception": "Diffusion is passive."
+        },
+        {
+         "label": "No",
+         "misconception": null
+        }
+       ],
+       "answer": "No",
+       "explanation": "No.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Is diffusion active or passive?",
+       "options": [],
+       "answer": "passive",
+       "explanation": "Passive.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Oxygen moves into the blood in the lungs because...",
+       "options": [
+        {
+         "label": "the blood pulls it in",
+         "misconception": "There is no pulling: it is a concentration gradient."
+        },
+        {
+         "label": "its concentration is lower in the blood",
+         "misconception": null
+        }
+       ],
+       "answer": "its concentration is lower in the blood",
+       "explanation": "Gradient.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "A steeper concentration gradient makes diffusion...",
+       "options": [
+        {
+         "label": "slower",
+         "misconception": "Bigger difference, faster diffusion."
+        },
+        {
+         "label": "faster",
+         "misconception": null
+        }
+       ],
+       "answer": "faster",
+       "explanation": "faster",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Diffusion direction",
+       "back": "High to low concentration"
+      }
+     ],
+     "help": {
+      "title": "Perfume test",
+      "body": "Spray perfume in a corner and time how long until your child smells it across the room. Ask why it spreads."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "gcseb.cells",
+     "title": "Plant and animal cells",
+     "unit": "Cell biology",
+     "lesson": {
+      "read": [
+       "Animal and plant cells both have a nucleus, cytoplasm, a cell membrane, mitochondria and ribosomes.",
+       "Plant cells also have a cell wall made of cellulose, chloroplasts for photosynthesis and a permanent vacuole filled with cell sap."
+      ],
+      "steps": [
+       "Learn the parts both cells share.",
+       "Learn the three extra plant parts: cell wall, chloroplasts, permanent vacuole."
+      ],
+      "check": "Not every plant cell has chloroplasts: root cells do not.",
+      "worked_example": [
+       [
+        "Leaf cell",
+        "Has chloroplasts for photosynthesis."
+       ]
+      ],
+      "reflect_prompt": "Explain why root hair cells do not need chloroplasts.",
+      "reflect_ideas": [
+       [
+        "light|photosynthesis",
+        "link chloroplasts to light and photosynthesis."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Which part is found in plant cells but not animal cells?",
+       "options": [
+        {
+         "label": "Cell membrane",
+         "misconception": "Both have a cell membrane."
+        },
+        {
+         "label": "Cell wall",
+         "misconception": null
+        },
+        {
+         "label": "Mitochondria",
+         "misconception": "Both have mitochondria."
+        }
+       ],
+       "answer": "Cell wall",
+       "explanation": "Cell wall.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Where does photosynthesis happen?",
+       "options": [
+        {
+         "label": "Mitochondria",
+         "misconception": "Mitochondria are for respiration."
+        },
+        {
+         "label": "Chloroplasts",
+         "misconception": null
+        }
+       ],
+       "answer": "Chloroplasts",
+       "explanation": "Chloroplasts.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "What controls the activities of the cell?",
+       "options": [],
+       "answer": "nucleus|the nucleus",
+       "explanation": "The nucleus.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Where does aerobic respiration happen?",
+       "options": [],
+       "answer": "mitochondria|the mitochondria",
+       "explanation": "Mitochondria.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Cell walls are made of...",
+       "options": [
+        {
+         "label": "glucose",
+         "misconception": "Glucose is a sugar used in respiration."
+        },
+        {
+         "label": "cellulose",
+         "misconception": null
+        }
+       ],
+       "answer": "cellulose",
+       "explanation": "Cellulose.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Do animal cells have a permanent vacuole?",
+       "options": [
+        {
+         "label": "Yes",
+         "misconception": "Only plant cells have a permanent vacuole."
+        },
+        {
+         "label": "No",
+         "misconception": null
+        }
+       ],
+       "answer": "No",
+       "explanation": "No.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Three parts only plants have",
+       "back": "Cell wall, chloroplasts, permanent vacuole"
+      }
+     ],
+     "help": {
+      "title": "Cell salad",
+      "body": "While cooking, ask your child which parts of a plant cell would be in a lettuce leaf, and which would not be in a potato."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  },
+  {
+   "code": "gcse-physics",
+   "title": "Physics",
+   "subject": "Physics",
+   "key_stage": "KS4",
+   "year_group": 10,
+   "colour": "#8A5A00",
+   "exam": "GCSE Physics (AQA 8463)",
+   "concepts": [
+    {
+     "code": "gcsep.speed",
+     "title": "Speed and distance–time graphs",
+     "unit": "Forces",
+     "lesson": {
+      "read": [
+       "Speed tells you how far something travels each second: speed (m/s) = distance (m) ÷ time (s).",
+       "On a distance–time graph, the gradient is the speed. A horizontal line means the object is stationary. A steeper line is faster.",
+       "Typical speeds: walking about 1.5 m/s, running about 3 m/s, cycling about 6 m/s, sound in air about 330 m/s."
+      ],
+      "steps": [
+       "Choose the equation and rearrange if needed.",
+       "Check the units match: km/h to m/s means × 1000 ÷ 3600.",
+       "Substitute and give the unit."
+      ],
+      "check": "A flat line is stationary, not constant speed.",
+      "worked_example": [
+       [
+        "A runner covers 400 m in 80 s",
+        "v = 400 ÷ 80 = 5 m/s."
+       ]
+      ],
+      "reflect_prompt": "Describe a journey you made today as a distance–time graph.",
+      "reflect_ideas": [
+       [
+        "flat|horizontal|stationary|stop",
+        "say where the line is flat."
+       ],
+       [
+        "steep|faster",
+        "say where it is steeper."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "numeric",
+       "prompt": "A car travels 150 m in 6 s. What is its speed in m/s?",
+       "options": [
+        {
+         "label": "900",
+         "misconception": "You multiplied. Divide distance by time."
+        }
+       ],
+       "answer": "25",
+       "explanation": "150 ÷ 6 = 25 m/s.",
+       "hints": [
+        "Speed = distance ÷ time."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A runner moves at 4 m/s. How long does it take to run 1000 m, in seconds?",
+       "options": [
+        {
+         "label": "4000",
+         "misconception": "You multiplied. Divide distance by speed."
+        }
+       ],
+       "answer": "250",
+       "explanation": "1000 ÷ 4 = 250 s.",
+       "hints": [
+        "Time = distance ÷ speed."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "Convert 72 km/h to m/s.",
+       "options": [
+        {
+         "label": "72000",
+         "misconception": "You still need to divide by 3600."
+        }
+       ],
+       "answer": "20",
+       "explanation": "72 000 ÷ 3600 = 20 m/s.",
+       "hints": [
+        "How many metres in a kilometre?",
+        "How many seconds in an hour?"
+       ]
+      },
+      {
+       "kind": "choice",
+       "prompt": "What does a horizontal line on a distance–time graph show?",
+       "options": [
+        {
+         "label": "Constant speed",
+         "misconception": "That is a horizontal line on a speed–time graph, not distance–time."
+        },
+        {
+         "label": "The object is stationary",
+         "misconception": null
+        }
+       ],
+       "answer": "The object is stationary",
+       "explanation": "Distance is not changing.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "What does the gradient of a distance–time graph show?",
+       "options": [],
+       "answer": "speed|the speed",
+       "explanation": "Speed.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A bus travels 1200 m in 120 s. Speed in m/s?",
+       "options": [],
+       "answer": "10",
+       "explanation": "10 m/s.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "Sound travels at 330 m/s. How far does it travel in 3 s, in metres?",
+       "options": [],
+       "answer": "990",
+       "explanation": "990 m.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Gradient of a distance–time graph",
+       "back": "Speed"
+      },
+      {
+       "front": "Convert km/h to m/s",
+       "back": "× 1000 ÷ 3600"
+      }
+     ],
+     "help": {
+      "title": "Walking speed check",
+      "body": "Time a family walk between two lamp posts and work out walking speed together in m/s."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "gcsep.kinetic-energy",
+     "title": "Kinetic energy",
+     "unit": "Energy",
+     "lesson": {
+      "read": [
+       "Kinetic energy is the energy stored in a moving object: E = ½ × m × v², in joules.",
+       "Doubling the speed makes the kinetic energy four times bigger, because speed is squared."
+      ],
+      "steps": [
+       "Square the speed first.",
+       "Multiply by the mass and by ½."
+      ],
+      "check": "Mass in kg, speed in m/s, energy in J.",
+      "worked_example": [
+       [
+        "2 kg ball at 3 m/s",
+        "½ × 2 × 9 = 9 J."
+       ]
+      ],
+      "reflect_prompt": "Explain why speed matters more than mass for kinetic energy.",
+      "reflect_ideas": [
+       [
+        "square",
+        "mention that speed is squared."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "numeric",
+       "prompt": "Calculate the kinetic energy of a 2 kg ball moving at 3 m/s, in J.",
+       "options": [
+        {
+         "label": "3",
+         "misconception": "You forgot to square the speed."
+        }
+       ],
+       "answer": "9",
+       "explanation": "½ × 2 × 3² = 9 J.",
+       "hints": [
+        "Square the speed first."
+       ]
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A 1000 kg car moves at 10 m/s. Kinetic energy in J?",
+       "options": [],
+       "answer": "50000",
+       "explanation": "½ × 1000 × 100 = 50 000 J.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "If speed doubles, kinetic energy...",
+       "options": [
+        {
+         "label": "doubles",
+         "misconception": "Speed is squared, so 2² = 4."
+        },
+        {
+         "label": "becomes four times bigger",
+         "misconception": null
+        }
+       ],
+       "answer": "becomes four times bigger",
+       "explanation": "Four times.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "numeric",
+       "prompt": "A 4 kg object at 2 m/s. KE in J?",
+       "options": [],
+       "answer": "8",
+       "explanation": "½ × 4 × 4 = 8 J.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Unit of energy?",
+       "options": [],
+       "answer": "joule|joules|J",
+       "explanation": "Joule.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A 0.5 kg ball at 4 m/s. KE in J?",
+       "options": [],
+       "answer": "4",
+       "explanation": "½ × 0.5 × 16 = 4 J.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Kinetic energy equation",
+       "back": "E = ½ m v²"
+      }
+     ],
+     "help": {
+      "title": "Car safety talk",
+      "body": "Ask why speed limits near schools are low. (Doubling speed gives four times the kinetic energy to stop.)"
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "gcsep.ohms-law",
+     "title": "Current, potential difference and resistance",
+     "unit": "Electricity",
+     "lesson": {
+      "read": [
+       "Potential difference V (volts) = current I (amps) × resistance R (ohms): V = I × R.",
+       "For a fixed resistor at constant temperature, current is directly proportional to potential difference."
+      ],
+      "steps": [
+       "Write the equation and rearrange if needed.",
+       "Substitute with units."
+      ],
+      "check": "Check units: V in volts, I in amps, R in ohms.",
+      "worked_example": [
+       [
+        "0.5 A through 12 Ω",
+        "V = 0.5 × 12 = 6 V."
+       ]
+      ],
+      "reflect_prompt": "Explain what happens to current if resistance goes up and voltage stays the same.",
+      "reflect_ideas": [
+       [
+        "decrease|less|lower|down",
+        "say that current goes down."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "numeric",
+       "prompt": "A current of 0.5 A flows through a 12 Ω resistor. What is the potential difference in V?",
+       "options": [],
+       "answer": "6",
+       "explanation": "V = I × R = 6 V.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "A 9 V battery drives 3 A through a resistor. Resistance in Ω?",
+       "options": [],
+       "answer": "3",
+       "explanation": "R = V ÷ I = 3 Ω.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "If resistance increases and p.d. stays the same, current...",
+       "options": [
+        {
+         "label": "increases",
+         "misconception": "I = V ÷ R, so a bigger R gives a smaller I."
+        },
+        {
+         "label": "decreases",
+         "misconception": null
+        }
+       ],
+       "answer": "decreases",
+       "explanation": "Decreases.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "numeric",
+       "prompt": "I = 2 A, R = 5 Ω. V?",
+       "options": [],
+       "answer": "10",
+       "explanation": "10 V.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "V = 12 V, R = 4 Ω. I in A?",
+       "options": [],
+       "answer": "3",
+       "explanation": "3 A.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Unit of resistance?",
+       "options": [],
+       "answer": "ohm|ohms|Ω",
+       "explanation": "Ohm.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "V = ?",
+       "back": "I × R"
+      }
+     ],
+     "help": {
+      "title": "Plug check",
+      "body": "Look at the label on a phone charger together and find the voltage and current. Ask your child what they mean."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  },
+  {
+   "code": "python-ks3-4",
+   "title": "Python programming",
+   "subject": "Computing",
+   "key_stage": "KS3-KS4",
+   "year_group": 10,
+   "colour": "#5B45C2",
+   "exam": "GCSE Computer Science programming (OCR J277, AQA 8525)",
+   "concepts": [
+    {
+     "code": "py.for-range",
+     "title": "for loops and range()",
+     "unit": "Iteration",
+     "lesson": {
+      "read": [
+       "A for loop repeats a block of code once for each value in a sequence. The indented lines are the loop body.",
+       "range(3) gives 0, 1, 2: it starts at 0 and stops before 3. range(start, stop, step) gives more control: range(2, 10, 3) gives 2, 5, 8.",
+       "Loops often build up a result: start a total at 0 before the loop, then add to it inside."
+      ],
+      "steps": [
+       "for i in range(1, 11):",
+       "    total = total + i",
+       "print(total)  # 55"
+      ],
+      "check": "The stop value is never included. To count 1 to 5, use range(1, 6).",
+      "worked_example": [
+       [
+        "Print a triangle of stars",
+        "for i in range(1, 4): print(\"*\" * i)"
+       ]
+      ],
+      "reflect_prompt": "Explain why range(1, 6) gives five numbers but stops at 5.",
+      "reflect_ideas": [
+       [
+        "stop|not included|before",
+        "say that the stop value is not included."
+       ],
+       [
+        "start|1",
+        "say that the start is included."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "What does for i in range(3): print(i) output?",
+       "options": [
+        {
+         "label": "1 2 3",
+         "misconception": "range starts at 0 unless you give a start."
+        },
+        {
+         "label": "0 1 2",
+         "misconception": null
+        },
+        {
+         "label": "0 1 2 3",
+         "misconception": "The stop value 3 is not included."
+        }
+       ],
+       "answer": "0 1 2",
+       "explanation": "0, 1, 2.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "What values does range(2, 10, 3) produce?",
+       "options": [
+        {
+         "label": "2, 5, 8, 11",
+         "misconception": "11 is past the stop value."
+        },
+        {
+         "label": "2, 5, 8",
+         "misconception": null
+        },
+        {
+         "label": "3, 6, 9",
+         "misconception": "It starts at 2, the first argument."
+        }
+       ],
+       "answer": "2, 5, 8",
+       "explanation": "Start 2, add 3, stop before 10.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which call gives the numbers 1 to 5?",
+       "options": [
+        {
+         "label": "range(1, 5)",
+         "misconception": "Stop is not included, so this ends at 4."
+        },
+        {
+         "label": "range(1, 6)",
+         "misconception": null
+        },
+        {
+         "label": "range(5)",
+         "misconception": "This gives 0 to 4."
+        }
+       ],
+       "answer": "range(1, 6)",
+       "explanation": "range(1, 6).",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "x = 0, then for i in range(4): x += i, then print(x). What is printed?",
+       "options": [
+        {
+         "label": "10",
+         "misconception": "range(4) is 0, 1, 2, 3, not 1 to 4."
+        }
+       ],
+       "answer": "6",
+       "explanation": "0 + 1 + 2 + 3 = 6.",
+       "hints": [
+        "Which values does range(4) give?"
+       ]
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "What does range(4) produce? (write like 0, 1, 2)",
+       "options": [],
+       "answer": "0, 1, 2, 3|0,1,2,3|0 1 2 3",
+       "explanation": "0, 1, 2, 3.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Write the range call for 5, 10, 15, 20.",
+       "options": [],
+       "answer": "range(5, 21, 5)|range(5,21,5)",
+       "explanation": "range(5, 21, 5).",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "total = 0, for n in range(1, 101): total += n. What is total?",
+       "options": [],
+       "answer": "5050",
+       "explanation": "5050.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "range(5) gives",
+       "back": "0, 1, 2, 3, 4"
+      },
+      {
+       "front": "Is the stop value included?",
+       "back": "No"
+      }
+     ],
+     "help": {
+      "title": "Teach-back",
+      "body": "Ask your child to show you a loop they wrote and explain what each line does. You don’t need to know Python to ask good questions."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "py.variables",
+     "title": "Variables and data types",
+     "unit": "Programming fundamentals",
+     "lesson": {
+      "read": [
+       "A variable is a named store for a value: score = 10.",
+       "Common data types: int (whole numbers), float (decimals), str (text in quotes) and bool (True or False)."
+      ],
+      "steps": [
+       "Choose a clear name.",
+       "Use input() to read text; convert with int() if you need a number."
+      ],
+      "check": "\"5\" is text; 5 is a number.",
+      "worked_example": [
+       [
+        "age = int(input(\"Age? \"))",
+        "Converts the text typed to an int."
+       ]
+      ],
+      "reflect_prompt": "Explain why \"3\" + \"4\" gives \"34\" in Python.",
+      "reflect_ideas": [
+       [
+        "string|str|text",
+        "say they are strings (text)."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "What data type is 3.5?",
+       "options": [
+        {
+         "label": "int",
+         "misconception": "int is for whole numbers."
+        },
+        {
+         "label": "float",
+         "misconception": null
+        }
+       ],
+       "answer": "float",
+       "explanation": "float.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "What does print(\"3\" + \"4\") output?",
+       "options": [
+        {
+         "label": "7",
+         "misconception": "These are strings, so + joins them."
+        },
+        {
+         "label": "34",
+         "misconception": null
+        }
+       ],
+       "answer": "34",
+       "explanation": "Joined text.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which converts the text \"12\" to a number?",
+       "options": [
+        {
+         "label": "str(12)",
+         "misconception": "str turns a number into text."
+        },
+        {
+         "label": "int(\"12\")",
+         "misconception": null
+        }
+       ],
+       "answer": "int(\"12\")",
+       "explanation": "int().",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Data type of True?",
+       "options": [],
+       "answer": "bool|boolean",
+       "explanation": "bool.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Data type of \"hello\"?",
+       "options": [],
+       "answer": "str|string",
+       "explanation": "str.",
+       "hints": []
+      },
+      {
+       "kind": "numeric",
+       "prompt": "x = 5, x = x + 2, print(x)",
+       "options": [],
+       "answer": "7",
+       "explanation": "7.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Four basic data types",
+       "back": "int, float, str, bool"
+      }
+     ],
+     "help": {
+      "title": "Type sorting",
+      "body": "Ask your child whether your phone number, age and name would be stored as int or str in a program, and why."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "py.if-statements",
+     "title": "Selection with if",
+     "unit": "Programming fundamentals",
+     "lesson": {
+      "read": [
+       "An if statement runs code only when a condition is True. elif checks another condition; else runs when none are True.",
+       "Comparison operators: == equal, != not equal, <, >, <=, >=."
+      ],
+      "steps": [
+       "if score >= 50:",
+       "    print(\"Pass\")",
+       "else:",
+       "    print(\"Try again\")"
+      ],
+      "check": "Use == to compare; = assigns a value.",
+      "worked_example": [
+       [
+        "Grade bands",
+        "if mark >= 70: print(\"A\") elif mark >= 50: print(\"B\") else: print(\"C\")"
+       ]
+      ],
+      "reflect_prompt": "Explain the difference between = and == in Python.",
+      "reflect_ideas": [
+       [
+        "assign|store",
+        "say = stores a value."
+       ],
+       [
+        "compare|equal",
+        "say == compares."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Which operator checks if two values are equal?",
+       "options": [
+        {
+         "label": "=",
+         "misconception": "= assigns a value; it does not compare."
+        },
+        {
+         "label": "==",
+         "misconception": null
+        }
+       ],
+       "answer": "==",
+       "explanation": "==",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "x = 7. if x > 5: print(\"big\") else: print(\"small\"). Output?",
+       "options": [
+        {
+         "label": "small",
+         "misconception": "7 is greater than 5."
+        },
+        {
+         "label": "big",
+         "misconception": null
+        }
+       ],
+       "answer": "big",
+       "explanation": "big",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "What runs when no if or elif condition is True?",
+       "options": [
+        {
+         "label": "elif",
+         "misconception": "elif needs its own condition to be True."
+        },
+        {
+         "label": "else",
+         "misconception": null
+        }
+       ],
+       "answer": "else",
+       "explanation": "else",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Not equal operator?",
+       "options": [],
+       "answer": "!=",
+       "explanation": "!=",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "x = 3. if x >= 3: output \"yes\"?",
+       "options": [
+        {
+         "label": "nothing",
+         "misconception": "3 >= 3 is True."
+        },
+        {
+         "label": "yes",
+         "misconception": null
+        }
+       ],
+       "answer": "yes",
+       "explanation": "yes",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which keyword checks a second condition?",
+       "options": [
+        {
+         "label": "else",
+         "misconception": "else has no condition."
+        },
+        {
+         "label": "elif",
+         "misconception": null
+        }
+       ],
+       "answer": "elif",
+       "explanation": "elif",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "= vs ==",
+       "back": "Assign vs compare"
+      }
+     ],
+     "help": {
+      "title": "If-then rules",
+      "body": "Turn a household rule into an if statement together: “if it is raining: take a coat”."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  },
+  {
+   "code": "gcse-geography",
+   "title": "Geography",
+   "subject": "Geography",
+   "key_stage": "KS4",
+   "year_group": 10,
+   "colour": "#137F86",
+   "exam": "GCSE Geography (AQA 8035)",
+   "concepts": [
+    {
+     "code": "gcseg.meanders",
+     "title": "Meanders and ox-bow lakes",
+     "unit": "Rivers",
+     "lesson": {
+      "read": [
+       "A meander is a large bend in a river, mostly in the middle and lower course.",
+       "Water flows fastest on the outside of a bend, eroding the bank by hydraulic action and abrasion to form a river cliff. On the inside, slower water deposits sediment as a slip-off slope.",
+       "Over time the neck between two bends narrows. In a flood the river cuts through the neck; deposition seals off the old bend, leaving an ox-bow lake."
+      ],
+      "steps": [
+       "Outside bend: fastest flow, erosion, river cliff.",
+       "Inside bend: slowest flow, deposition, slip-off slope.",
+       "Flood cuts the neck; deposition seals the old meander."
+      ],
+      "check": "Erosion is on the outside of the bend, not the inside.",
+      "worked_example": [
+       [
+        "Explain ox-bow lake formation (6 marks)",
+        "Erosion on outer bends narrows the neck; a flood cuts through; deposition seals the old channel; the cut-off bend becomes an ox-bow lake."
+       ]
+      ],
+      "reflect_prompt": "Mark where you would stand to see erosion and where to see deposition on a meander, and explain why.",
+      "reflect_ideas": [
+       [
+        "outside|outer",
+        "say erosion is on the outside bend."
+       ],
+       [
+        "inside|inner",
+        "say deposition is on the inside bend."
+       ],
+       [
+        "fast|slow|speed|energy",
+        "link it to the speed or energy of the water."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "On which side of a meander is the river cliff?",
+       "options": [
+        {
+         "label": "The inside bend",
+         "misconception": "The inside bend has slow water and deposition."
+        },
+        {
+         "label": "The outside bend",
+         "misconception": null
+        }
+       ],
+       "answer": "The outside bend",
+       "explanation": "Outside bend.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Why does deposition happen on the inside bend?",
+       "options": [
+        {
+         "label": "It is sheltered from the wind",
+         "misconception": "Wind is not the reason: it is the water's speed and energy."
+        },
+        {
+         "label": "The water is slower and has less energy",
+         "misconception": null
+        }
+       ],
+       "answer": "The water is slower and has less energy",
+       "explanation": "Less energy, so sediment is dropped.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "What usually cuts through a meander neck?",
+       "options": [
+        {
+         "label": "Tidal waves",
+         "misconception": "Rivers in the middle and lower course cut through in floods."
+        },
+        {
+         "label": "A flood",
+         "misconception": null
+        }
+       ],
+       "answer": "A flood",
+       "explanation": "Flood.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Name the erosion process where the force of water pushes air into cracks.",
+       "options": [
+        {
+         "label": "Attrition",
+         "misconception": "Attrition is rocks hitting each other."
+        },
+        {
+         "label": "Hydraulic action",
+         "misconception": null
+        }
+       ],
+       "answer": "Hydraulic action",
+       "explanation": "Hydraulic action.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Landform on the outside of a meander bend?",
+       "options": [],
+       "answer": "river cliff|a river cliff",
+       "explanation": "River cliff.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Landform on the inside of a meander bend?",
+       "options": [],
+       "answer": "slip-off slope|slip off slope",
+       "explanation": "Slip-off slope.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Ox-bow lakes are most common in the...",
+       "options": [
+        {
+         "label": "upper course",
+         "misconception": "The upper course has V-shaped valleys and waterfalls."
+        },
+        {
+         "label": "middle and lower course",
+         "misconception": null
+        }
+       ],
+       "answer": "middle and lower course",
+       "explanation": "Middle and lower course.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Outside bend",
+       "back": "Erosion, river cliff"
+      },
+      {
+       "front": "Inside bend",
+       "back": "Deposition, slip-off slope"
+      }
+     ],
+     "help": {
+      "title": "River walk",
+      "body": "On a walk by a river or stream, ask your child to point out where the water is fastest and where sand or pebbles build up."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "gcseg.erosion",
+     "title": "River erosion processes",
+     "unit": "Rivers",
+     "lesson": {
+      "read": [
+       "Rivers erode in four ways: hydraulic action (force of water), abrasion (rocks scraping the bed and banks), attrition (rocks hitting each other and becoming smaller and rounder) and solution (rocks dissolving)."
+      ],
+      "steps": [
+       "Learn each process with one example.",
+       "Abrasion is usually the most effective process."
+      ],
+      "check": "Attrition wears the load, not the banks.",
+      "worked_example": [
+       [
+        "Pebbles becoming round downstream",
+        "Attrition."
+       ]
+      ],
+      "reflect_prompt": "Explain the difference between abrasion and attrition.",
+      "reflect_ideas": [
+       [
+        "bank|bed",
+        "say abrasion wears the bed and banks."
+       ],
+       [
+        "each other|load|smaller",
+        "say attrition is rocks hitting each other."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "Which process makes river stones smaller and rounder?",
+       "options": [
+        {
+         "label": "Abrasion",
+         "misconception": "Abrasion wears the bed and banks."
+        },
+        {
+         "label": "Attrition",
+         "misconception": null
+        }
+       ],
+       "answer": "Attrition",
+       "explanation": "Attrition.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which process dissolves limestone?",
+       "options": [
+        {
+         "label": "Hydraulic action",
+         "misconception": "Hydraulic action is the force of water."
+        },
+        {
+         "label": "Solution",
+         "misconception": null
+        }
+       ],
+       "answer": "Solution",
+       "explanation": "Solution.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Rocks scraping the river bed is...",
+       "options": [
+        {
+         "label": "Attrition",
+         "misconception": "Attrition is rocks hitting each other."
+        },
+        {
+         "label": "Abrasion",
+         "misconception": null
+        }
+       ],
+       "answer": "Abrasion",
+       "explanation": "Abrasion.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Erosion by the force of water?",
+       "options": [],
+       "answer": "hydraulic action",
+       "explanation": "Hydraulic action.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Rocks dissolving?",
+       "options": [],
+       "answer": "solution",
+       "explanation": "Solution.",
+       "hints": []
+      },
+      {
+       "kind": "text",
+       "prompt": "Rocks knocking into each other?",
+       "options": [],
+       "answer": "attrition",
+       "explanation": "Attrition.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Four river erosion processes",
+       "back": "Hydraulic action, abrasion, attrition, solution"
+      }
+     ],
+     "help": {
+      "title": "Pebble hunt",
+      "body": "Compare pebbles from a beach or river with sharp stones from a path. Ask your child which erosion process made them round."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "gcseg.grid-refs",
+     "title": "Grid references",
+     "unit": "Map skills",
+     "lesson": {
+      "read": [
+       "Grid references give a location on a map. Read across first (eastings), then up (northings): “along the corridor and up the stairs”.",
+       "A four-figure reference names a square. A six-figure reference adds tenths for a precise point."
+      ],
+      "steps": [
+       "Find the bottom-left corner of the square.",
+       "Write the easting, then the northing.",
+       "For six figures, estimate tenths across and up."
+      ],
+      "check": "Always go along before up.",
+      "worked_example": [
+       [
+        "Bottom-left corner at easting 34, northing 72",
+        "Four-figure reference 3472."
+       ]
+      ],
+      "reflect_prompt": "Explain how to give a six-figure grid reference.",
+      "reflect_ideas": [
+       [
+        "along|across|easting",
+        "say you read along first."
+       ],
+       [
+        "tenth",
+        "mention tenths."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "text",
+       "prompt": "A square's bottom-left corner is at easting 34 and northing 72. Four-figure reference?",
+       "options": [],
+       "answer": "3472",
+       "explanation": "Along then up: 3472.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Which do you read first?",
+       "options": [
+        {
+         "label": "Northings (up)",
+         "misconception": "Along the corridor first, then up the stairs."
+        },
+        {
+         "label": "Eastings (along)",
+         "misconception": null
+        }
+       ],
+       "answer": "Eastings (along)",
+       "explanation": "Eastings.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "How many figures pinpoint a precise location?",
+       "options": [
+        {
+         "label": "Four",
+         "misconception": "Four figures give a whole square."
+        },
+        {
+         "label": "Six",
+         "misconception": null
+        }
+       ],
+       "answer": "Six",
+       "explanation": "Six.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "text",
+       "prompt": "Easting 12, northing 45: four-figure reference?",
+       "options": [],
+       "answer": "1245",
+       "explanation": "1245.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Grid lines going up the map are...",
+       "options": [
+        {
+         "label": "northings",
+         "misconception": "Lines running up the map are numbered along the bottom: eastings."
+        },
+        {
+         "label": "eastings",
+         "misconception": null
+        }
+       ],
+       "answer": "eastings",
+       "explanation": "Eastings.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "A four-figure reference describes a...",
+       "options": [
+        {
+         "label": "point",
+         "misconception": "A point needs six figures."
+        },
+        {
+         "label": "square",
+         "misconception": null
+        }
+       ],
+       "answer": "square",
+       "explanation": "Square.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Grid reference rule",
+       "back": "Along the corridor, up the stairs"
+      }
+     ],
+     "help": {
+      "title": "Map treasure hunt",
+      "body": "Use a printed or online OS map of your area and ask your child for the grid reference of your house or school."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  },
+  {
+   "code": "ks4-logic",
+   "title": "Logic and reasoning",
+   "subject": "Logic and reasoning",
+   "key_stage": "KS4",
+   "year_group": 10,
+   "colour": "#B04A16",
+   "exam": "Extended answers across GCSE subjects",
+   "concepts": [
+    {
+     "code": "ks4l.conditionals",
+     "title": "Conditionals and truth tables",
+     "unit": "Formal logic",
+     "lesson": {
+      "read": [
+       "A conditional says: if P is true, then Q is true (P → Q). It is broken only when P is true and Q is false.",
+       "Modus ponens (P, so Q) and modus tollens (not Q, so not P) are valid. Affirming the consequent (Q, so P) and denying the antecedent (not P, so not Q) are invalid.",
+       "Valid means the conclusion must follow if the premises are true. Sound means valid and the premises really are true."
+      ],
+      "steps": [
+       "Write the rule as P → Q.",
+       "Identify which part the evidence is about.",
+       "Check it against the four forms."
+      ],
+      "check": "An if…then is broken only when the if is true and the then is false.",
+      "worked_example": [
+       [
+        "Cards E, K, 4, 7. Rule: if vowel, then even on the back.",
+        "Turn E (could have odd) and 7 (could have a vowel)."
+       ]
+      ],
+      "reflect_prompt": "Write a rule from your own life and give one case that breaks it and one that does not.",
+      "reflect_ideas": [
+       [
+        "if",
+        "write the rule as an if...then sentence."
+       ],
+       [
+        "break|false|not",
+        "say what breaks the rule."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "numeric",
+       "prompt": "In the truth table for P → Q, how many rows are false?",
+       "options": [
+        {
+         "label": "2",
+         "misconception": "That is the AND table. P → Q is false only once."
+        }
+       ],
+       "answer": "1",
+       "explanation": "Only P true and Q false.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“If you are in Year 11, you sit GCSEs. Kai sits GCSEs. So Kai is in Year 11.”",
+       "options": [
+        {
+         "label": "Valid",
+         "misconception": "This is affirming the consequent: other people sit GCSEs too."
+        },
+        {
+         "label": "Invalid",
+         "misconception": null
+        }
+       ],
+       "answer": "Invalid",
+       "explanation": "Affirming the consequent.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“If you are in Year 11, you sit GCSEs. Jo does not sit GCSEs. So Jo is not in Year 11.”",
+       "options": [
+        {
+         "label": "Invalid",
+         "misconception": "This is modus tollens, which is valid."
+        },
+        {
+         "label": "Valid",
+         "misconception": null
+        }
+       ],
+       "answer": "Valid",
+       "explanation": "Modus tollens.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "A disease affects 1 in 1000 people. A test finds 99% of cases but gives false positives 5% of the time. Roughly what is the chance a positive person has the disease?",
+       "options": [
+        {
+         "label": "About 99%",
+         "misconception": "This ignores the base rate: most positives come from the many healthy people."
+        },
+        {
+         "label": "About 2%",
+         "misconception": null
+        },
+        {
+         "label": "About 5%",
+         "misconception": "That is the false positive rate, not the answer."
+        }
+       ],
+       "answer": "About 2%",
+       "explanation": "In 100 000 people: 99 true positives and about 4995 false positives, so about 1.9%.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "When is P → Q false?",
+       "options": [
+        {
+         "label": "P false and Q true",
+         "misconception": "A false if makes no promise."
+        },
+        {
+         "label": "P true and Q false",
+         "misconception": null
+        }
+       ],
+       "answer": "P true and Q false",
+       "explanation": "Only then.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“If it snows, school closes. School closed. So it snowed.”",
+       "options": [
+        {
+         "label": "Valid",
+         "misconception": "Affirming the consequent."
+        },
+        {
+         "label": "Invalid",
+         "misconception": null
+        }
+       ],
+       "answer": "Invalid",
+       "explanation": "Invalid.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "Can a valid argument have a false conclusion?",
+       "options": [
+        {
+         "label": "No",
+         "misconception": "Validity is about form, not truth."
+        },
+        {
+         "label": "Yes, if a premise is false",
+         "misconception": null
+        }
+       ],
+       "answer": "Yes, if a premise is false",
+       "explanation": "Yes.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "P → Q is false when",
+       "back": "P is true and Q is false"
+      },
+      {
+       "front": "Modus tollens",
+       "back": "If P then Q; not Q; so not P"
+      }
+     ],
+     "help": {
+      "title": "Rule breakers",
+      "body": "Pick a family rule (“If it’s a school night, screens off at 9”) and ask your child which situations would break it."
+     },
+     "prerequisites": []
+    },
+    {
+     "code": "ks4l.fallacies",
+     "title": "Spotting fallacies",
+     "unit": "Critical thinking",
+     "lesson": {
+      "read": [
+       "A fallacy is a flaw in reasoning that makes an argument look stronger than it is.",
+       "Ad hominem attacks the person. Straw man twists the other view. False dilemma offers only two options. Slippery slope claims an extreme chain without evidence. Bandwagon says many people believe it so it is true. Correlation as causation assumes two things that happen together are cause and effect."
+      ],
+      "steps": [
+       "Find the conclusion.",
+       "Ask what the reasons really show.",
+       "Name the flaw."
+      ],
+      "check": "Naming the fallacy is not enough: say why the reasoning fails.",
+      "worked_example": [
+       [
+        "Ice cream sales and drownings both rise.",
+        "Correlation as causation: hot weather drives both."
+       ]
+      ],
+      "reflect_prompt": "Find an advert that uses a fallacy and rewrite it as a fair argument.",
+      "reflect_ideas": [
+       [
+        "fallac|flaw",
+        "name the flaw you found."
+       ]
+      ]
+     },
+     "quiz": [
+      {
+       "kind": "choice",
+       "prompt": "“You can’t trust Sam’s argument for recycling; he once dropped litter.”",
+       "options": [
+        {
+         "label": "Straw man",
+         "misconception": "Sam's view is not twisted; Sam himself is attacked."
+        },
+        {
+         "label": "Ad hominem",
+         "misconception": null
+        }
+       ],
+       "answer": "Ad hominem",
+       "explanation": "Attacks the person.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“Either we cancel sports day or pupils will get sunburn.”",
+       "options": [
+        {
+         "label": "Slippery slope",
+         "misconception": "There is no chain of events, just two options."
+        },
+        {
+         "label": "False dilemma",
+         "misconception": null
+        }
+       ],
+       "answer": "False dilemma",
+       "explanation": "Only two options offered.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“Pupils who eat breakfast get better grades, so breakfast makes you clever.”",
+       "options": [
+        {
+         "label": "Bandwagon",
+         "misconception": "No appeal to popularity here."
+        },
+        {
+         "label": "Correlation as causation",
+         "misconception": null
+        }
+       ],
+       "answer": "Correlation as causation",
+       "explanation": "Other factors may cause both.",
+       "hints": []
+      }
+     ],
+     "review": [
+      {
+       "kind": "choice",
+       "prompt": "“Everyone is buying these trainers, so they must be best.”",
+       "options": [
+        {
+         "label": "Ad hominem",
+         "misconception": "No person is attacked."
+        },
+        {
+         "label": "Bandwagon",
+         "misconception": null
+        }
+       ],
+       "answer": "Bandwagon",
+       "explanation": "Bandwagon.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "“If we allow trainers, soon there will be no uniform at all.”",
+       "options": [
+        {
+         "label": "False dilemma",
+         "misconception": "It is a chain of consequences."
+        },
+        {
+         "label": "Slippery slope",
+         "misconception": null
+        }
+       ],
+       "answer": "Slippery slope",
+       "explanation": "Slippery slope.",
+       "hints": []
+      },
+      {
+       "kind": "choice",
+       "prompt": "A: “We need more trees.” B: “So you want no space to play?”",
+       "options": [
+        {
+         "label": "Ad hominem",
+         "misconception": "B twists A's view rather than attacking A."
+        },
+        {
+         "label": "Straw man",
+         "misconception": null
+        }
+       ],
+       "answer": "Straw man",
+       "explanation": "Straw man.",
+       "hints": []
+      }
+     ],
+     "flashcards": [
+      {
+       "front": "Ad hominem",
+       "back": "Attacking the person, not the argument"
+      }
+     ],
+     "help": {
+      "title": "Debate dinner",
+      "body": "Pick a light topic and take turns making arguments; the others spot any fallacies."
+     },
+     "prerequisites": []
+    }
+   ],
+   "mocks": []
+  }
+ ]
+}

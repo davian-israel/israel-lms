@@ -1,0 +1,21 @@
+[package]
+name = "worker"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+kernel.workspace = true
+infra.workspace = true
+learner.workspace = true
+planning.workspace = true
+safeguarding.workspace = true
+reporting.workspace = true
+notifications.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+time.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+sqlx.workspace = true

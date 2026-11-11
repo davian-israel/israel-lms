@@ -1,0 +1,24 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <h1>Schools</h1>
+  {% if !created.is_empty() %}<p class="okbox" role="status">{{ created }}</p>{% endif %}
+  <table>
+    <thead><tr><th scope="col">School</th><th scope="col">Code</th><th scope="col">Pupil sign-in</th><th scope="col">Pupils</th><th scope="col">Staff</th><th scope="col">Open alerts</th></tr></thead>
+    <tbody>{% for sc in schools %}<tr><td>{{ sc.name }}</td><td class="mono">{{ sc.code }}</td><td>{% if sc.active %}On{% else %}Off{% endif %}</td><td>{{ sc.pupils }}</td><td>{{ sc.staff }}</td><td>{% if sc.open_cases > 0 %}<strong>{{ sc.open_cases }}</strong>{% else %}0{% endif %}</td></tr>{% endfor %}</tbody>
+  </table>
+  <p class="small muted">Alert details stay with each school's safeguarding leads. You see counts only, plus escalations after two hours.</p>
+  <section class="panel" aria-labelledby="new">
+    <h2 id="new">Add a school</h2>
+    {% if !error.is_empty() %}<p class="alert" role="alert">{{ error }}</p>{% endif %}
+    <form class="form" method="post" action="/platform/schools">
+      <label class="field" for="name">School name<input id="name" name="name" value="{{ form.name }}" required></label>
+      <label class="field" for="code">School code<input id="code" name="code" value="{{ form.code }}" class="mono" style="text-transform:uppercase" required><span class="hint">3 to 12 letters or numbers. Pupils type this to sign in.</span></label>
+      <label class="field" for="first">Admin first name<input id="first" name="first" value="{{ form.first }}" required></label>
+      <label class="field" for="last">Admin last name<input id="last" name="last" value="{{ form.last }}"></label>
+      <label class="field" for="email">Admin email<input id="email" name="email" type="email" value="{{ form.email }}" required></label>
+      <div><button class="btn" type="submit">Add school</button></div>
+    </form>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+[package]
+name = "infra"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+kernel.workspace = true
+identity.workspace = true
+curriculum.workspace = true
+content.workspace = true
+assessment.workspace = true
+learner.workspace = true
+planning.workspace = true
+tutoring.workspace = true
+safeguarding.workspace = true
+reporting.workspace = true
+notifications.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+time.workspace = true
+thiserror.workspace = true
+async-trait.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+sqlx.workspace = true
+argon2.workspace = true
+rand.workspace = true
+sha2.workspace = true
+hex.workspace = true
+reqwest.workspace = true
+tokio.workspace = true

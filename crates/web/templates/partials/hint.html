@@ -1,0 +1,2 @@
+<div class="note" data-focus><ol>{% for h in shown %}<li>{{ h }}</li>{% endfor %}</ol>
+{% if more %}<button class="link" type="button" hx-get="/attempt/{{ attempt }}/hint/{{ item }}/{{ next }}" hx-target="#hint-{{ item }}">Another hint</button>{% else %}<p class="small muted">That's all the hints. Have a go: a wrong answer is how we find what to practise.</p>{% endif %}</div>

@@ -1,0 +1,35 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: lms, POSTGRES_PASSWORD: lms, POSTGRES_DB: lms }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U lms" --health-interval 3s --health-retries 20
+    env:
+      DATABASE_URL: postgres://lms:lms@localhost:5432/lms
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with: { components: "clippy, rustfmt" }
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build --locked
+      - run: cargo test --locked
+      - name: Migrate and seed against Postgres
+        run: DEMO_MODE=true ./target/debug/lms seed
+      - name: Smoke test the web server
+        run: |
+          DEMO_MODE=true PORT=8080 ./target/debug/lms all &
+          for i in $(seq 1 30); do curl -sf localhost:8080/healthz && break; sleep 1; done
+          curl -sf localhost:8080/ | grep -q "Who is signing in"
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t israel-lms .

@@ -1,0 +1,30 @@
+{% extends "public.html" %}
+{% block title %}Family sign in{% endblock %}
+{% block content %}
+{% if code_step %}
+<h1>Check your email</h1>
+<p>We sent a 6-digit code to <strong>{{ email }}</strong>. It works for 10 minutes.</p>
+{% if !demo_code.is_empty() %}<p class="note">Demo: your code is <strong class="mono" style="font-size:22px">{{ demo_code }}</strong></p>{% endif %}
+<form class="form" method="post" action="/signin/family/verify">
+  <input type="hidden" name="email" value="{{ email }}">
+  <label class="field" for="code">Code
+    <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" class="mono{% if !error.is_empty() %} err-input{% endif %}" style="font-size:26px;letter-spacing:.15em;max-width:240px" required>
+  </label>
+  {% if !error.is_empty() %}<p role="alert" style="color:var(--error);font-weight:700">{{ error }}</p>{% endif %}
+  <div><button class="btn" type="submit">Sign in</button></div>
+</form>
+<form method="post" action="/signin/family/code"><input type="hidden" name="email" value="{{ email }}"><button class="link" type="submit">Send a new code</button></form>
+{% else %}
+<h1>See how your child is doing</h1>
+<p>Sign in with the email address you gave the school. We'll send you a code; there's no password to remember.</p>
+<form class="form" method="post" action="/signin/family/code">
+  <label class="field" for="email">Email address
+    <input id="email" name="email" type="email" autocomplete="email" value="{{ email }}" required>
+  </label>
+  {% if !error.is_empty() %}<p role="alert" style="color:var(--error);font-weight:700">{{ error }}</p>{% endif %}
+  <div><button class="btn" type="submit">Email me a code</button></div>
+</form>
+<p class="small muted">First time? Sign in, then enter the invite code from the school's letter to connect to your child.</p>
+{% endif %}
+<p class="small"><a href="/">Not a parent or carer?</a></p>
+{% endblock %}

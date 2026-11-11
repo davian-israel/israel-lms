@@ -1,0 +1,11 @@
+<h2 id="helper-h" style="font-size:19px">Stuck? Ask the helper</h2>
+<p class="small muted">It gives hints about this lesson, not answers. It's a computer program, not a person. Your teacher can see these messages.</p>
+<div class="stack" style="gap:8px">
+  {% for (who, body) in chat %}<div class="bubble{% if who == "pupil" %} pupil{% endif %}"><span class="visually-hidden">{% if who == "pupil" %}You said:{% else %}Helper said:{% endif %}</span>{{ body }}</div>{% endfor %}
+</div>
+<form hx-post="/learn/{{ concept_id() }}/ask" hx-target="#helper" method="post" action="/learn/{{ concept_id() }}/ask" class="stack" style="gap:8px">
+  <label class="visually-hidden" for="question">Your question</label>
+  <textarea id="question" name="question" rows="3" maxlength="500" placeholder="What's confusing you?"></textarea>
+  <button class="btn secondary small" type="submit">Ask</button>
+</form>
+{% if !ai_live %}<p class="small muted">Offline helper: it points you to the right step of the method.</p>{% endif %}

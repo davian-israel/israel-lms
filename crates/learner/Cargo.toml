@@ -1,0 +1,14 @@
+[package]
+name = "learner"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+kernel.workspace = true
+serde.workspace = true
+uuid.workspace = true
+time.workspace = true
+thiserror.workspace = true
+async-trait.workspace = true
+serde_json.workspace = true

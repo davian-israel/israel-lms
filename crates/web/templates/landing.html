@@ -1,0 +1,28 @@
+{% extends "public.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<h1>Who is signing in?</h1>
+<div class="stack" style="max-width:520px;gap:12px">
+  <a class="btn" href="/signin">I'm a pupil</a>
+  <a class="btn secondary" href="/signin/family">I'm a parent or carer</a>
+  <a class="btn secondary" href="/signin/staff">I'm a teacher or school staff</a>
+</div>
+{% if demo %}
+<section class="note" aria-labelledby="demo-h" style="max-width:640px">
+  <h2 id="demo-h" style="font-size:19px">Demo accounts</h2>
+  <p class="small">Everything here is made up. Try each role:</p>
+  <table class="small">
+    <thead><tr><th scope="col">Role</th><th scope="col">How to sign in</th></tr></thead>
+    <tbody>
+      <tr><td>Pupil (Year 6)</td><td>School code <code>OAKHILL</code>, username <code>amara.k</code>, password <code>{{ pupil_pw }}</code></td></tr>
+      <tr><td>Pupil (Year 10)</td><td><code>OAKHILL</code>, <code>zainab.a</code>, <code>{{ pupil_pw }}</code></td></tr>
+      <tr><td>Parent</td><td><code>joyce.kofi@example.com</code>; the code is shown on screen in the demo</td></tr>
+      <tr><td>Teacher (6B)</td><td><code>rachel.hughes@oakhill.example</code>, <code>{{ staff_pw }}</code></td></tr>
+      <tr><td>Teacher and safeguarding lead</td><td><code>owen.clarke@oakhill.example</code>, <code>{{ staff_pw }}</code></td></tr>
+      <tr><td>School admin (deputy lead)</td><td><code>sandra.patel@oakhill.example</code>, <code>{{ staff_pw }}</code></td></tr>
+      <tr><td>System admin</td><td><code>{{ sysadmin_email }}</code>, the password set in Railway variables</td></tr>
+    </tbody>
+  </table>
+</section>
+{% endif %}
+{% endblock %}

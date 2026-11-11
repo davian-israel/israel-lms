@@ -1,0 +1,35 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <h1>Content and AI</h1>
+  <section aria-labelledby="courses">
+    <h2 id="courses">Courses</h2>
+    <table>
+      <thead><tr><th scope="col">Course</th><th scope="col">Year</th><th scope="col">Topics</th><th scope="col">Live lessons</th><th scope="col">Questions</th><th scope="col">Open reports</th></tr></thead>
+      <tbody>{% for k in courses %}<tr><td>{{ k.course }}</td><td>{{ k.year_group }}</td><td>{{ k.concepts }}</td><td>{{ k.lessons_live }}</td><td>{{ k.items }}</td><td>{{ k.open_reports }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </section>
+  <section aria-labelledby="rep">
+    <h2 id="rep">Reported questions</h2>
+    {% if reports.is_empty() %}<p>No open reports.</p>{% endif %}
+    <ul class="attention">
+      {% for (id, prompt, note, at) in reports %}
+      <li><span class="grow"><strong style="display:inline">{{ prompt }}</strong><br><span class="small">{{ note }} ({{ at }})</span></span>
+        <form method="post" action="/platform/reports/{{ id }}"><button class="link" type="submit">Question is fine</button></form>
+        <form method="post" action="/platform/reports/{{ id }}"><input type="hidden" name="retire" value="1"><button class="btn danger small" type="submit">Retire question</button></form></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <div class="row">
+    <section class="panel side" aria-labelledby="ai">
+      <h2 id="ai">AI helper</h2>
+      <p>{% if ai_live %}Connected.{% else %}Not connected: set LLM_API_KEY to switch it on. Pupils get the offline helper meanwhile.{% endif %}</p>
+      <p>{{ ai_calls }} calls, {{ ai_in }} input and {{ ai_out }} output tokens.</p>
+    </section>
+    <section class="panel side" aria-labelledby="ev">
+      <h2 id="ev">Background jobs</h2>
+      <p>{{ pending }} events waiting, oldest {{ lag }} seconds. {% if failed > 0 %}<strong>{{ failed }} failing.</strong>{% else %}None failing.{% endif %}</p>
+    </section>
+  </div>
+</div>
+{% endblock %}

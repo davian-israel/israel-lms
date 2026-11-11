@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  <p class="small"><a href="/tests">Practice tests</a></p>
+  <h1>{{ title }}</h1>
+  {% if !started %}
+  <div class="panel stack" style="gap:12px">
+    <p>{{ minutes }} minutes. Answer what you can; you can skip and come back. When time runs out, hand in what you have.</p>
+    <p>Work on paper if it helps, just like the real test.</p>
+    <form method="post" action="/tests/{{ mock }}/start"><button class="btn" type="submit">Start the test</button></form>
+  </div>
+  {% else %}
+  <div class="inline" style="position:sticky;top:0;background:var(--paper);padding:8px 0;z-index:2">
+    <span>Time left: <strong class="mono" id="timer" data-deadline="{{ deadline_ms }}" style="font-size:22px">{{ minutes }}:00</strong></span>
+    <button class="link" type="button" data-toggle-timer>Hide timer</button>
+    <span id="five-min" class="note" hidden>Five minutes left. Check your answers.</span>
+  </div>
+  <form class="stack" method="post" action="/tests/attempt/{{ attempt }}/finish">
+    {% for q in questions %}
+    <fieldset class="panel" style="margin:0">
+      <legend class="small muted">Question {{ q.n + 1 }} of {{ q.total }}</legend>
+      <p style="font-size:20px;font-weight:700">{{ q.prompt }}</p>
+      {% if q.choice %}
+      <div class="options">{% for o in q.options %}<label class="opt" for="{{ o.id }}"><input type="radio" id="{{ o.id }}" name="a_{{ q.item_id }}" value="{{ o.label }}"> {{ o.label }}</label>{% endfor %}</div>
+      {% else %}
+      <label class="field" for="a_{{ q.item_id }}">Answer<input id="a_{{ q.item_id }}" name="a_{{ q.item_id }}" autocomplete="off"{% if q.numeric %} inputmode="decimal"{% endif %} style="max-width:280px"></label>
+      {% endif %}
+    </fieldset>
+    {% endfor %}
+    <div><button class="btn" type="submit">Hand in my test</button></div>
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

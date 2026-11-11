@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+{% include "head.html" %}
+<title>{{ c.title }} | Margin for staff</title>
+</head>
+<body class="staff-bg">
+<a class="skip" href="#main">Skip to content</a>
+<div class="staff-wrap">
+  <nav class="sidebar" aria-label="Staff">
+    <a class="brand" href="/">{% include "logo.html" %}<span>Margin for staff</span></a>
+    {% for n in c.nav %}<a href="{{ n.href }}"{% if n.current %} aria-current="page"{% endif %}><span>{{ n.label }}</span>{% if !n.badge.is_empty() %}<span class="badge">{{ n.badge }}</span>{% endif %}</a>{% endfor %}
+    <div class="foot">
+      <span>{{ c.user }}, {{ c.role_label }}</span>
+      <span>{{ c.school }}</span>
+      {% for s in c.switch %}<form method="post" action="/switch/{{ s.0 }}"><button class="link" type="submit">Switch to {{ s.1 }}</button></form>{% endfor %}
+      <form method="post" action="/signout"><button class="link" type="submit">Sign out</button></form>
+      {% if c.demo %}<span>Demo environment: data is made up.</span>{% endif %}
+    </div>
+  </nav>
+  <main id="main" class="staff-main">
+  {% block content %}{% endblock %}
+  </main>
+</div>
+</body>
+</html>

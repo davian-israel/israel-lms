@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="small"><a href="/home">Today</a> / {{ page.course_title }}</p>
+<div class="lesson">
+  <nav class="steps" aria-label="Lesson steps">
+    <ol>
+      {% if mode == "learn" %}
+      <li aria-current="step"><span class="dot">1</span>Read</li>
+      <li><span class="dot">2</span>Review</li>
+      <li><span class="dot">3</span>Reflect</li>
+      {% else %}
+      <li aria-current="step"><span class="dot">1</span>Remind</li>
+      <li><span class="dot">2</span>{% if mode == "review" %}Review{% else %}Try again{% endif %}</li>
+      {% endif %}
+    </ol>
+  </nav>
+  <div class="work">
+    <div class="inner">
+      <h1>{{ heading }}</h1>
+      {% if !intro.is_empty() %}<p class="note">{{ intro }}</p>{% endif %}
+      {% if mode == "learn" %}
+        {% for para in page.lesson.read %}<p>{{ para }}</p>{% endfor %}
+      {% endif %}
+      {% if !page.lesson.worked_example.is_empty() %}
+      <section class="panel squared" aria-labelledby="we">
+        <h2 id="we" style="font-size:19px">Worked example</h2>
+        <ol>{% for (line, why) in page.lesson.worked_example %}<li><span class="mono">{{ line }}</span>{% if !why.is_empty() %} <span class="small muted">{{ why }}</span>{% endif %}</li>{% endfor %}</ol>
+      </section>
+      {% endif %}
+      {% if !page.lesson.steps.is_empty() %}
+      <section aria-labelledby="method">
+        <h2 id="method" style="font-size:19px">The method</h2>
+        <ol>{% for s in page.lesson.steps %}<li>{{ s }}</li>{% endfor %}</ol>
+      </section>
+      {% endif %}
+      {% if mode == "learn" && !page.lesson.check.is_empty() %}<p><strong>Quick check:</strong> {{ page.lesson.check }}</p>{% endif %}
+      <div id="q" aria-live="polite">
+        <button class="btn" type="button" hx-post="/practice/{{ page.concept_id }}/{{ mode }}/start" hx-target="#q">{% if mode == "learn" %}I've read it: start the questions{% else %}Start{% endif %}</button>
+      </div>
+      {% if mode == "learn" && !page.flashcards.is_empty() %}
+      <details>
+        <summary>Flashcards for this topic ({{ page.flashcards.len() }})</summary>
+        <dl>{% for (front, back) in page.flashcards %}<dt><strong>{{ front }}</strong></dt><dd style="margin:0 0 10px">{{ back }}</dd>{% endfor %}</dl>
+      </details>
+      {% endif %}
+      {% if page.lesson.ai_generated %}<p class="small muted">This lesson was drafted with AI and checked before it went live.</p>{% endif %}
+    </div>
+  </div>
+  <aside class="helper" aria-labelledby="helper-h" id="helper">
+    {% include "partials/helper_inner.html" %}
+  </aside>
+</div>
+{% endblock %}

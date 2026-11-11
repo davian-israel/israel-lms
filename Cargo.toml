@@ -1,0 +1,56 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "UNLICENSED"
+publish = false
+
+[workspace.dependencies]
+kernel = { path = "crates/kernel" }
+identity = { path = "crates/identity" }
+curriculum = { path = "crates/curriculum" }
+content = { path = "crates/content" }
+assessment = { path = "crates/assessment" }
+learner = { path = "crates/learner" }
+planning = { path = "crates/planning" }
+tutoring = { path = "crates/tutoring" }
+safeguarding = { path = "crates/safeguarding" }
+reporting = { path = "crates/reporting" }
+notifications = { path = "crates/notifications" }
+infra = { path = "crates/infra" }
+web = { path = "crates/web" }
+worker = { path = "crates/worker" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v7", "v4", "serde"] }
+time = { version = "0.3", features = ["serde", "macros", "formatting", "parsing"] }
+thiserror = "2"
+async-trait = "0.1"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "time", "sync"] }
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "postgres", "uuid", "time", "json", "macros", "migrate"] }
+axum = { version = "0.8", features = ["macros"] }
+axum-extra = { version = "0.10", features = ["cookie"] }
+tower-http = { version = "0.6", features = ["trace", "timeout", "request-id", "set-header"] }
+askama = "0.14"
+argon2 = "0.5"
+rand = "0.8"
+sha2 = "0.10"
+hex = "0.4"
+csv = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+
+[profile.release]
+opt-level = 3
+codegen-units = 4
+lto = "thin"
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 1

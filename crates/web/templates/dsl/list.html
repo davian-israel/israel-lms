@@ -1,0 +1,19 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <h1>Safeguarding alerts</h1>
+    <p>Margin raises an alert when a pupil writes something that suggests they may be at risk. Open new alerts first. If you don't acknowledge one within an hour, the deputy is alerted; after two hours, the platform team.</p>
+  </div>
+  {% if cases.is_empty() %}<p class="okbox">No alerts.</p>{% else %}
+  <table>
+    <thead><tr><th scope="col">Status</th><th scope="col">Pupil</th><th scope="col">Level</th><th scope="col">Category</th><th scope="col">Raised</th></tr></thead>
+    <tbody>
+    {% for k in cases %}
+    <tr{% if k.open %} style="background:var(--error-bg)"{% endif %}><td>{% if k.open %}<strong>{{ k.status }}</strong>{% else %}{{ k.status }}{% endif %}</td><td><a href="/safeguarding/{{ k.id }}">{{ k.pupil }}</a></td><td>{{ k.severity }}</td><td>{{ k.category }}</td><td>{{ k.opened }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+{% endblock %}

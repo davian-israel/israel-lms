@@ -1,0 +1,8 @@
+<form class="form" method="post" action="/signin/school" hx-post="/signin/school" hx-target="#signin">
+  <label class="field" for="school">School code
+    <input id="school" name="school" autocomplete="organization" value="{{ school_code }}" class="err-input" aria-describedby="err" style="letter-spacing:.08em;text-transform:uppercase" required data-focus>
+    <span class="hint">It is printed at the top of your login card.</span>
+  </label>
+  <p id="err" role="alert" style="color:var(--error);font-weight:700">{{ error }}</p>
+  <div><button class="btn" type="submit">Continue</button></div>
+</form>

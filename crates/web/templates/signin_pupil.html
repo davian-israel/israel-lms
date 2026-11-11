@@ -1,0 +1,20 @@
+{% extends "public.html" %}
+{% block title %}Pupil sign in{% endblock %}
+{% block content %}
+<h1>Sign in</h1>
+<div id="signin" class="stack" style="gap:18px">
+{% if step2 %}
+{% include "partials/pupil_step2.html" %}
+{% else %}
+<form class="form" method="post" action="/signin/school" hx-post="/signin/school" hx-target="#signin">
+  <label class="field" for="school">School code
+    <input id="school" name="school" autocomplete="organization" value="{{ school_code }}" style="letter-spacing:.08em;text-transform:uppercase"{% if !error.is_empty() %} class="err-input" aria-describedby="err"{% endif %} required>
+    <span class="hint">It is printed at the top of your login card.</span>
+  </label>
+  {% if !error.is_empty() %}<p id="err" role="alert" style="color:var(--error);font-weight:700">{{ error }}</p>{% endif %}
+  <div><button class="btn" type="submit">Continue</button></div>
+</form>
+{% endif %}
+</div>
+<p class="small"><a href="/">Not a pupil?</a></p>
+{% endblock %}

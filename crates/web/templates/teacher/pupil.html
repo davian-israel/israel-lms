@@ -1,0 +1,50 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <p class="small"><a href="/teach">Classes</a></p>
+    <h1>{{ pupil.first_name }} {{ pupil.last_name }}</h1>
+    <p class="muted">{% if let Some(u) = pupil.username %}Username {{ u }}. {% endif %}{% if let Some(y) = pupil.year_group %}Year {{ y }}.{% endif %}{% if paused %} Plan paused.{% endif %}</p>
+  </div>
+  {% if !new_password.is_empty() %}<div class="okbox" role="status">New password: <strong class="mono" style="font-size:20px">{{ new_password }}</strong>. Give it to {{ pupil.first_name }} in person. The old password no longer works.</div>{% endif %}
+  {% if !message.is_empty() %}<p class="okbox" role="status">{{ message }}</p>{% endif %}
+  <div class="row">
+    <section class="panel grow" aria-labelledby="wk">
+      <h2 id="wk">This week</h2>
+      <p>{{ week.days_studied }} days, {{ week.total_minutes }} minutes. Quiz answers {{ week.quiz_right }} of {{ week.quiz_total }} right; reviews passed {{ week.reviews_passed }} of {{ week.reviews_total }}.</p>
+      {% if !week.mistakes.is_empty() %}<p><strong>Open mistakes:</strong> {% for (concept, mis, n) in week.mistakes %}{{ concept }} ({{ mis }}, seen {{ n }} times){% if !loop.last %}; {% endif %}{% endfor %}</p>{% endif %}
+    </section>
+    <section class="panel side" aria-labelledby="act">
+      <h2 id="act">Actions</h2>
+      <form class="form" method="post" action="/teach/pupil/{{ pupil.id }}/task">
+        <label class="field" for="concept">Add to today's plan
+          <select id="concept" name="concept">{% for (id, t) in concepts %}<option value="{{ id }}">{{ t }}</option>{% endfor %}</select>
+        </label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="kind" value="learn" checked> Lesson</label>
+          <label class="chip"><input type="radio" name="kind" value="review"> Review</label>
+          <label class="chip"><input type="radio" name="kind" value="fix"> Fix</label>
+        </div>
+        <div><button class="btn small" type="submit">Add to plan</button></div>
+      </form>
+      <form method="post" action="/teach/pupil/{{ pupil.id }}/reset" style="margin-top:18px"><button class="btn secondary small" type="submit">Reset password</button></form>
+    </section>
+  </div>
+  <section aria-labelledby="st">
+    <h2 id="st">Topics</h2>
+    {% if states.is_empty() %}<p>No topics started yet.</p>{% else %}
+    <table><thead><tr><th scope="col">Topic</th><th scope="col">Course</th><th scope="col">Mastery</th><th scope="col">Stage</th><th scope="col">Next review</th><th scope="col">Failed reviews</th></tr></thead>
+    <tbody>{% for s in states %}<tr><td>{{ s.concept }}</td><td>{{ s.course }}</td><td>{{ s.pct }}%</td><td>{{ s.stage }}</td><td>{{ s.due }}</td><td>{{ s.lapses }}</td></tr>{% endfor %}</tbody></table>{% endif %}
+  </section>
+  <section aria-labelledby="ans">
+    <h2 id="ans">Recent answers</h2>
+    <table><thead><tr><th scope="col">When</th><th scope="col">Question</th><th scope="col">Answer</th><th scope="col">Result</th></tr></thead>
+    <tbody>{% for r in responses %}<tr><td>{{ r.when }}</td><td>{{ r.prompt }}</td><td>{{ r.answer }}</td><td>{% if r.correct %}Right{% else %}Wrong{% if !r.misconception.is_empty() %}: {{ r.misconception }}{% endif %}{% endif %}</td></tr>{% endfor %}</tbody></table>
+  </section>
+  <section aria-labelledby="ref">
+    <h2 id="ref">Reflections</h2>
+    {% if reflections.is_empty() %}<p>None yet.</p>{% endif %}
+    {% for (concept, body, conf, fb) in reflections %}<div class="panel" style="margin-bottom:10px"><strong>{{ concept }}</strong> <span class="small muted">confidence {{ conf }} of 3</span><p style="margin:6px 0">"{{ body }}"</p><p class="small muted" style="margin:0">Feedback given: {{ fb }}</p></div>{% endfor %}
+  </section>
+</div>
+{% endblock %}

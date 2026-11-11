@@ -1,0 +1,14 @@
+<div class="inline"><span class="badge" style="background:#E8EEF8;font-size:15px;padding:6px 12px">{{ school_name }}</span><a href="/signin">Change school</a></div>
+<form class="form" method="post" action="/signin/pupil">
+  <input type="hidden" name="school" value="{{ school_code }}">
+  <label class="field" for="username">Username
+    <input id="username" name="username" autocomplete="username" value="{{ username }}" required data-focus>
+  </label>
+  <label class="field" for="password">Password
+    <input id="password" name="password" type="password" autocomplete="current-password"{% if !error.is_empty() %} class="err-input" aria-describedby="err"{% endif %} required>
+    <span class="hint">Three words with dashes, like on your card.</span>
+  </label>
+  {% if !error.is_empty() %}<p id="err" role="alert" style="color:var(--error);font-weight:700">{{ error }}</p>{% endif %}
+  <div><button class="btn" type="submit">Sign in</button></div>
+  <p class="small muted">Forgotten your password? Ask your teacher to reset it. On a shared computer, sign out when you finish.</p>
+</form>

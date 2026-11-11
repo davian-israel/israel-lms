@@ -1,0 +1,32 @@
+[package]
+name = "web"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+kernel.workspace = true
+identity.workspace = true
+curriculum.workspace = true
+content.workspace = true
+assessment.workspace = true
+learner.workspace = true
+planning.workspace = true
+tutoring.workspace = true
+safeguarding.workspace = true
+reporting.workspace = true
+notifications.workspace = true
+infra.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+time.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+axum.workspace = true
+axum-extra.workspace = true
+tower-http.workspace = true
+askama.workspace = true
+csv.workspace = true
+sqlx.workspace = true

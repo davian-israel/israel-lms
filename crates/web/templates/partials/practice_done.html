@@ -1,0 +1,35 @@
+<div class="stack" style="gap:16px" data-focus>
+  <p style="font-size:21px;margin:0"><strong>You got {{ right }} out of {{ total }}.</strong></p>
+  {% if kind == "lesson" %}
+  <form class="stack" style="gap:14px" hx-post="/learn/{{ concept }}/reflect" hx-target="#q" method="post" action="/learn/{{ concept }}/reflect">
+    <h2 style="font-size:21px;margin:0">Reflect</h2>
+    <label class="field" for="body">{{ reflect_prompt }}
+      <textarea id="body" name="body" rows="4" required></textarea>
+      <span class="hint">Write it as if you were explaining it to a friend.</span>
+    </label>
+    <fieldset style="border:0;padding:0;margin:0">
+      <legend style="font-weight:700;margin-bottom:6px">How sure do you feel?</legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="confidence" value="1"> Not sure yet</label>
+        <label class="chip"><input type="radio" name="confidence" value="2" checked> Getting there</label>
+        <label class="chip"><input type="radio" name="confidence" value="3"> I could teach it</label>
+      </div>
+    </fieldset>
+    <div><button class="btn" type="submit">Finish the lesson</button></div>
+  </form>
+  {% else if kind == "review" %}
+  {% if passed %}
+  <div class="okbox"><strong>Review passed.</strong> The next review moves further away, so it sticks for longer.</div>
+  {% else %}
+  <div class="note"><strong>Not quite this time.</strong> That's useful: this topic comes back sooner so you can practise it again.</div>
+  {% endif %}
+  <p><a class="btn" href="/home">Back to today</a></p>
+  {% else %}
+  {% if passed %}
+  <div class="okbox"><strong>Fixed.</strong> That mistake is cleared from your list.</div>
+  {% else %}
+  <div class="note"><strong>Still tricky.</strong> It stays on your list and comes back on your next study day. Try asking the helper about the step you're unsure of.</div>
+  {% endif %}
+  <p><a class="btn" href="/home">Back to today</a></p>
+  {% endif %}
+</div>

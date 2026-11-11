@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  <div>
+    <p class="muted" style="margin:0">{{ date }}</p>
+    <h1>Hello, {{ first_name }}</h1>
+    {% if paused %}
+    <p class="note">Your plan is having a short break. Your teacher will let you know when it starts again. You can still open any of your books.</p>
+    {% else if tasks.is_empty() %}
+    <p>Nothing is planned for today. Enjoy the rest, or open one of <a href="/books">your books</a>.</p>
+    {% else if minutes_left == 0 %}
+    <div class="okbox"><strong>All done for today.</strong> Everything you learned is booked in for review, so it sticks.</div>
+    {% else %}
+    <p>About {{ minutes_left }} minutes left today. Start at the top: reviews come first because they keep what you know.</p>
+    {% endif %}
+  </div>
+  {% if !tasks.is_empty() %}
+  <ol class="plan" aria-label="Today's plan">
+    {% for t in tasks %}
+    <li class="{% if t.done %}done{% else if loop.index0 == next_index %}next{% endif %}" style="border-left:8px solid {{ t.colour }}">
+      <span class="num" aria-hidden="true">{% if t.done %}✓{% else %}{{ loop.index }}{% endif %}</span>
+      {% include "pupil/task.html" %}
+      {% if t.done %}<span class="small">Done</span>{% else if loop.index0 == next_index %}<a class="btn" href="{{ t.href }}">Start</a>{% else %}<a class="btn secondary small" href="{{ t.href }}">Open</a>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+  {% if !upcoming.is_empty() %}
+  <section aria-labelledby="soon">
+    <h2 id="soon">Coming up</h2>
+    <ul class="plan">
+      {% for t in upcoming %}<li><span class="num" aria-hidden="true">{{ t.day }}</span>{% include "pupil/task.html" %}</li>{% endfor %}
+    </ul>
+    <p class="small"><a href="/plan">See the whole week</a></p>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

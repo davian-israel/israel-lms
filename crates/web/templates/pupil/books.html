@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  <h1>My books</h1>
+  <div class="books">
+    {% for b in books %}
+    <a class="book" href="/books/{{ b.course_id }}" style="background:{{ b.colour }}">
+      <span class="label">
+        <span class="t">{{ b.title }}</span>
+        <span class="s">{{ b.subtitle }}</span>
+        <span class="bar" aria-hidden="true"><span style="width:{{ b.pct() }}%"></span></span>
+        <span class="small">{{ b.secured }} of {{ b.total }} secured, {{ b.started }} started</span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+  {% if !addable.is_empty() %}
+  <section class="panel" aria-labelledby="add">
+    <h2 id="add">Add a book</h2>
+    <p>These fit your year group. Adding one puts its first lesson in your plan.</p>
+    <ul class="plan">
+      {% for (id, title, exam) in addable %}
+      <li><span class="what"><strong>{{ title }}</strong><span class="small muted">{{ exam }}</span></span>
+        <form method="post" action="/books/add"><input type="hidden" name="course" value="{{ id }}"><button class="btn secondary small" type="submit">Add {{ title }}</button></form></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

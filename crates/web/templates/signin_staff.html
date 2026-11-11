@@ -1,0 +1,16 @@
+{% extends "public.html" %}
+{% block title %}Staff sign in{% endblock %}
+{% block content %}
+<h1>Staff sign in</h1>
+<form class="form" method="post" action="/signin/staff">
+  <label class="field" for="email">Email address
+    <input id="email" name="email" type="email" autocomplete="username" value="{{ email }}" required>
+  </label>
+  <label class="field" for="password">Password
+    <input id="password" name="password" type="password" autocomplete="current-password"{% if !error.is_empty() %} class="err-input" aria-describedby="err"{% endif %} required>
+  </label>
+  {% if !error.is_empty() %}<p id="err" role="alert" style="color:var(--error);font-weight:700">{{ error }}</p>{% endif %}
+  <div><button class="btn" type="submit">Sign in</button></div>
+</form>
+<p class="small"><a href="/">Not staff?</a></p>
+{% endblock %}

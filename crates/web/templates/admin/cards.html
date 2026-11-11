@@ -1,0 +1,22 @@
+{% extends "staff.html" %}
+{% block content %}
+<div class="stack">
+  <div class="no-print">
+    <h1>Login cards</h1>
+    <p>{{ cards.len() }} accounts created. Print this page now: passwords are shown only once. Lost cards can be replaced with a password reset.</p>
+    <p class="small muted">Use your browser's print command. Cards are laid out to cut along the lines.</p>
+  </div>
+  <div class="card-grid">
+    {% for k in cards %}
+    <div class="login-card">
+      <strong>{{ k.name }}</strong> <span class="small">{{ k.class_name }}</span>
+      <div class="small">Go to Margin and choose "I'm a pupil".</div>
+      <div>School code <strong class="mono">{{ code }}</strong></div>
+      <div>Username <strong class="mono">{{ k.username }}</strong></div>
+      <div>Password <strong class="mono">{{ k.password }}</strong></div>
+      <div class="small muted">{{ school_name }}. Keep this card private.</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

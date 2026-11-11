@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="stack">
+  <div><h1>Practice tests</h1><p>Timed papers in the style of the real exam. Your answers also update your plan.</p></div>
+  {% if mocks.is_empty() %}<p class="note">There are no practice tests for your books yet.</p>{% endif %}
+  <ul class="plan">
+    {% for m in mocks %}
+    <li><span class="what"><strong>{{ m.title }}</strong><span class="small muted">{{ m.course_title }}, {{ m.items }} questions, {{ m.minutes }} minutes{% if let Some(b) = m.best %}{% if let Some(mx) = m.max_score %}. Best so far: {{ b }} out of {{ mx }}{% endif %}{% endif %}</span></span>
+      <a class="btn secondary small" href="/tests/{{ m.id }}">Open<span class="visually-hidden"> {{ m.title }}</span></a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
